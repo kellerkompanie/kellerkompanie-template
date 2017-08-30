@@ -1,0 +1,95 @@
+// --- Mission Info --- //
+onLoadMission = "www.kellerkompanie.com";
+onLoadIntro = "onLoadIntro";
+onLoadName = "Kellerkompanie Zeus";
+
+onLoadMissionTime = 1;
+onLoadIntroTime = 1;
+
+loadScreen =  "pictures\intro.paa";
+author = "Schwaggot";
+
+
+
+// --- Respawn --- //
+respawn = 3; // 0 NONE, 1 BIRD, 2 INSTANT, 3 BASE, 4 GROUP, 5 SIDE
+enableTeamSwitch = 0; // disable team switch in respawn screen
+respawnButton = 1; // enable manual respawn
+respawnDelay = 10; // set the respawn delay to 10 seconds. Note: delay of >=5 is required for loadouts to work after respawn
+respawnVehicleDelay = 60; // set the respawn delay for vehicles to 60 seconds
+respawnDialog = 1; // show the respawn counter
+respawnOnStart = -1; // don't respawn on start. Don't run respawn script on start.
+respawnTemplates[] = {"Counter"}; // shows a simple respawn counter in death screen
+
+
+
+disabledAI = 1; // remove AI from player slots
+aiKills = 0; // disable score list for AI
+showHUD[] = { // enable or disable GUI elements
+	true,	// Scripted HUD (same as showHUD command)
+	true,	// Vehicle + soldier info
+	true,	// Vehicle radar
+	true,	// Vehicle compass [HIDDEN]
+	true,	// Tank direction indicator
+	false,	// Commanding menu
+	false,	// Group Bar
+	true	// HUD Weapon Cursors
+};
+showGPS = 1; // enable GPS
+showCompass = 1; // enable compass
+showMap = 1; // enable map
+showWatch = 1; // enable watch
+
+disableChannels[]={ // {channelID<number>, disableChat<bool>, disableVoice<bool>}
+	{0,true,true}, // Global
+	{1,false,true}, // Side
+	{2,true,true}, // Commmand
+	{3,false,true}, // Group
+	{4,true,true}, // Vehicle
+	{5,true,true}, // Direct
+	{6,false,true} // System
+};
+allowFunctionsLog = 1; // allow functions to log into RPT file
+enableDebugConsole = 1; // 0 only in edit, 1 in SP and hosts/admins, 2 everyone
+
+corpseManagerMode = 1; // 0 None, 1 All, 2 None But Respawned, 3 All But Respawned
+corpseLimit = 20;
+corpseRemovalMinTime = 60; // seconds
+corpseRemovalMaxTime = 600; // seconds
+wreckManagerMode = 0; // 0 None, 1 All, 2 None But Respawned, 3 All But Respawned
+
+saving = 0; // disable saving
+showGroupIndicator = 0; // do not display group members on GPS
+
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 32;
+};
+
+class Params
+{
+	#include "mission\CfgParams.hpp"
+	#include "mission\CfgACEParams.hpp"
+};
+
+class cfgFunctions 
+{
+	#include "functions\CfgFunctions.hpp"
+};
+
+#include "functions\loadout\internal\loadoutDialog.hpp"
+#include "functions\logistics\internal\logisticDialog.hpp"
+
+class ACE_Settings
+{
+	#include "mission\CfgACE.hpp"
+};
+
+class CfgDebriefingSections {
+	class acex_killTracker {
+		title = "Acex Killed Events";
+		variable = "acex_killTracker_outputText";
+	};
+};
