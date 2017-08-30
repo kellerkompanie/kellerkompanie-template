@@ -306,7 +306,7 @@ switch (_param_faction) do {
 
 	/* Misc */	
 
-	case : {
+	case 999: {
 		// Custom
 		#include "factions\999_custom.sqf"
 		
