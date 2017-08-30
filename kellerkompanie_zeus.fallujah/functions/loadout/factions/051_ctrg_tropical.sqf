@@ -32,7 +32,7 @@ keko_loadout_list = [
 ];
 
 
-["put", ["DEFAULT", ["U_B_CTRG_Soldier_F","U_B_CTRG_Soldier_3_F","U_B_CTRG_Soldier_2_F"]]] call keko_loadout_uniform;
+["put", ["DEFAULT", ["U_B_CTRG_Soldier_F","U_B_CTRG_Soldier_3_F"]]] call keko_loadout_uniform;
 ["put", ["LEA", ["U_B_CTRG_Soldier_F"]]] call keko_loadout_uniform;
 ["put", ["PIL", ["U_B_HeliPilotCoveralls"]]] call keko_loadout_uniform;	
 ["put", ["SNI", ["U_B_T_FullGhillie_tna_F"]]] call keko_loadout_uniform;
@@ -58,7 +58,7 @@ _primary_mag_mmg = "130Rnd_338_Mag";
 ["put", ["MMG", [_primary_mag_mmg]]] call keko_loadout_primary_mag;
 
 ["put", ["SNI", ["ACE_7Rnd_408_305gr_Mag"]]] call keko_loadout_primary_mag;
-["put", ["SPO", ["ACE_30Rnd_65x47_Scenar_mag"]]] call keko_loadout_primary_mag;
+["put", ["SPO", ["20Rnd_762x51_Mag"]]] call keko_loadout_primary_mag;
 
 
 _secondary_mag = "16Rnd_9x21_Mag";
@@ -230,7 +230,8 @@ _backpack_specialist = "B_FieldPack_oli";
 ["put", ["SPO", ["Laserdesignator_01_khk_F"]]] call keko_loadout_optics;
 
 
-["put", ["DEFAULT", ["G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F","G_Balaclava_TI_tna_F","G_Balaclava_TI_G_tna_F"]]] call keko_loadout_goggles;
+["put", ["DEFAULT", ["G_Balaclava_TI_tna_F","G_Balaclava_TI_G_tna_F"]]] call keko_loadout_goggles;
+["put", ["PIL", []]] call keko_loadout_goggles;
 
 
 ["put", ["DEFAULT", []]] call keko_loadout_attributes;
