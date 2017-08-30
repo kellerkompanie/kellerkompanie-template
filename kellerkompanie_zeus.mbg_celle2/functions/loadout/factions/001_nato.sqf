@@ -184,13 +184,13 @@ _backpack_specialist = "B_FieldPack_cbr";
 
 
 
-["put", ["DEFAULT", ["arifle_MX_Black_F"]]] call keko_loadout_primary_weapon;
-["put", ["GRE", ["arifle_MX_GL_Black_F"]]] call keko_loadout_primary_weapon;
-["put", ["MAR", ["arifle_MXM_Black_F"]]] call keko_loadout_primary_weapon;
-["put", ["LMG", ["arifle_MX_SW_Black_F"]]] call keko_loadout_primary_weapon;
-["put", ["MMG", ["MMG_02_black_F"]]] call keko_loadout_primary_weapon;
-["put", ["SNI", ["srifle_LRR_F"]]] call keko_loadout_primary_weapon;
-["put", ["SPO", ["arifle_MXM_Black_F"]]] call keko_loadout_primary_weapon;
+["put", ["DEFAULT", ["arifle_MX_Black_F","arifle_MX_F"]]] call keko_loadout_primary_weapon;
+["put", ["GRE", ["arifle_MX_GL_Black_F","arifle_MX_GL_F"]]] call keko_loadout_primary_weapon;
+["put", ["MAR", ["arifle_MXM_Black_F","arifle_MXM_F"]]] call keko_loadout_primary_weapon;
+["put", ["LMG", ["arifle_MX_SW_Black_F","arifle_MX_SW_F"]]] call keko_loadout_primary_weapon;
+["put", ["MMG", ["MMG_02_black_F","MMG_02_camo_F","MMG_02_sand_F"]]] call keko_loadout_primary_weapon;
+["put", ["SNI", ["srifle_LRR_F","srifle_LRR_camo_F"]]] call keko_loadout_primary_weapon;
+["put", ["SPO", ["arifle_MXM_Black_F","arifle_MXM_F"]]] call keko_loadout_primary_weapon;
 
 
 ["put", ["DEFAULT", ["acc_pointer_IR","optic_Hamr"]]] call keko_loadout_primary_items;
