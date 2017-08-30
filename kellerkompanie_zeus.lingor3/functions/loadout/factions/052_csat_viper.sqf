@@ -1,4 +1,4 @@
-//CSAT
+//CSAT Viper
 keko_loadout_list = [
 	["---- Führung ----", ""], //0
 	["Platoon Lead", "LEA"], //1
@@ -10,12 +10,7 @@ keko_loadout_list = [
 	["---- Plebs ----", ""], //7
 	["Rifleman", "RIF"], //8
 	["Rifleman Anti-Tank", "RAT"], //9
-	["Grenadier", "GRE"], //10
-	["Light Machine Gunner", "LMG"], //11
-	["Light Machine Gunner Asst.", "LAS"], //12
 	["---- Heavy Weapons ----", ""], //13
-	["Medium Machine Gunner", "MMG"], //14
-	["Medium Machine Gunner Asst.", "MAS"], //15
 	["Missile Specialist Anti-Tank", "SAT"], //16
 	["Missile Specialist Anti-Tank Asst.", "AAT"], //17
 	["Missile Specialist Anti-Air", "SAA"], //18
@@ -30,27 +25,22 @@ keko_loadout_list = [
 ];
 
 
-["put", ["DEFAULT", ["U_O_CombatUniform_ocamo"]]] call keko_loadout_uniform;
-["put", ["LEA", ["U_O_OfficerUniform_ocamo"]]] call keko_loadout_uniform;
-["put", ["PIL", ["U_O_PilotCoveralls"]]] call keko_loadout_uniform;	
+["put", ["DEFAULT", ["U_O_V_Soldier_Viper_F"]]] call keko_loadout_uniform;
 
 
 
-["put", ["DEFAULT", ["V_HarnessO_brn"]]] call keko_loadout_vest;
-["put", ["LEA", ["V_BandollierB_cbr"]]] call keko_loadout_vest;
-["put", ["PIL", ["V_TacVest_blk"]]] call keko_loadout_vest;
+["put", ["DEFAULT", ["V_HarnessO_ghex_F"]]] call keko_loadout_vest;
 
 
+// 
 
 _primary_mag = "30Rnd_65x39_caseless_green";
 _primary_mag_tracer = "30Rnd_65x39_caseless_green_mag_Tracer";
-_primary_mag_marksman = "10Rnd_762x54_Mag";
-_primary_mag_lmg = "150Rnd_762x54_Box_Tracer";
-_primary_mag_mmg = "150Rnd_93x64_Mag";
+_primary_mag_marksman = "20Rnd_650x39_Cased_Mag_F";
+_primary_mag_special = "10Rnd_50BW_Mag_F";
 ["put", ["DEFAULT", [_primary_mag,_primary_mag_tracer]]] call keko_loadout_primary_mag;
 ["put", ["MAR", [_primary_mag_marksman]]] call keko_loadout_primary_mag;
-["put", ["LMG", [_primary_mag_lmg]]] call keko_loadout_primary_mag;
-["put", ["MMG", [_primary_mag_mmg]]] call keko_loadout_primary_mag;
+
 
 
 
@@ -58,12 +48,12 @@ _secondary_mag = "16Rnd_9x21_Mag";
 ["put", ["DEFAULT", [_secondary_mag]]] call keko_loadout_secondary_mag;
 
 
-_primary_mag_grenadier = "1Rnd_HE_Grenade_shell";
-_at_spec_mag = "RPG32_F";
+_at_mag = "RPG32_F";
+_at_spec_mag = "Titan_AT";
 _aa_spec_mag = "Titan_AA";
-["put", ["GRE", [_primary_mag_grenadier]]] call keko_loadout_tertiary_mag;
 ["put", ["SAT", [_at_spec_mag]]] call keko_loadout_tertiary_mag;
 ["put", ["SAA", [_aa_spec_mag]]] call keko_loadout_tertiary_mag;
+["put", ["RAT", [_at_mag]]] call keko_loadout_tertiary_mag;
 
 
 _grenade = "HandGrenade";
@@ -87,42 +77,36 @@ _uniform_inventory pushBack [1, _smoke_green];
 
 
 
-["put", ["DEFAULT", [[5, _primary_mag],[5, _primary_mag_tracer],[1, _smoke_white],[3,_grenade]]]] call keko_loadout_vest_inventory;
+["put", ["DEFAULT", [[4, _primary_mag],[4, _primary_mag_tracer],[2, _primary_mag_special],[1, _smoke_white],[3,_grenade]]]] call keko_loadout_vest_inventory;
 ["put", ["JTC", [[2, _primary_mag],[2,_primary_mag_tracer],[4,"UGL_FlareGreen_F"],[4,"1Rnd_SmokeRed_Grenade_shell"],[4,"1Rnd_SmokeBlue_Grenade_shell"],[2,"SmokeShellBlue"],[2,"SmokeShellGreen"],[2,"SmokeShellOrange"],[2,"SmokeShellPurple"],[2,"SmokeShellYellow"]]]] call keko_loadout_vest_inventory;
 
 _vest_inventory_medic = [[10, "ACE_epinephrine"],[10, "ACE_morphine"],[1,"ACE_surgicalKit"],[10, "ACE_quikclot"]];
 _vest_inventory_medic pushBack [3, _primary_mag];
 _vest_inventory_medic pushBack [3, _primary_mag_tracer];
 _vest_inventory_medic pushBack [2, _smoke_white];
+_vest_inventory_medic pushBack [1, _primary_mag_special];
 ["put", ["MED", _vest_inventory_medic]] call keko_loadout_vest_inventory;
 
 _vest_inventory_doctor = [[10, "ACE_epinephrine"],[10, "ACE_morphine"],[1,"ACE_surgicalKit"],[10, "ACE_quikclot"]];
 _vest_inventory_doctor pushBack [3, _primary_mag];
 _vest_inventory_doctor pushBack [3, _primary_mag_tracer];
 _vest_inventory_doctor pushBack [2, _smoke_white];
+_vest_inventory_doctor pushBack [1, _primary_mag_special];
 ["put", ["DOC", _vest_inventory_doctor]] call keko_loadout_vest_inventory;
 
-["put", ["MAR", [[5, _primary_mag_marksman],[1, _smoke_white],[2, _grenade],[5, _primary_mag_marksman]]]] call keko_loadout_vest_inventory;
-["put", ["LMG", [[4, _primary_mag_lmg],[1, _smoke_white],[2, _grenade]]]] call keko_loadout_vest_inventory;
-["put", ["MMG", [[2, _primary_mag_mmg],[2, _grenade]]]] call keko_loadout_vest_inventory;
+["put", ["MAR", [[4, _primary_mag_marksman],[1, _smoke_white],[2, _grenade],[4, _primary_mag_marksman]]]] call keko_loadout_vest_inventory;
 ["put", ["UAV", [[2,"ACE_UAVBattery"],[2, _primary_mag],[2, _primary_mag_tracer],[1,"ACE_HuntIR_monitor"],[8,"ACE_HuntIR_M203"]]]] call keko_loadout_vest_inventory;
 ["put", ["PIL", [[2, _secondary_mag],[1, "ACE_microDAGR"],[10, "ACE_quikclot"]]]] call keko_loadout_vest_inventory;
 
 
-["put", ["DEFAULT", ["H_HelmetB_sand"]]] call keko_loadout_helmet;
-["put", ["LEA", ["H_MilCap_ocamo"]]] call keko_loadout_helmet;
-["put", ["SER", ["H_HelmetSpecB_sand"]]] call keko_loadout_helmet;
-["put", ["SQL", ["H_HelmetSpecB_sand"]]] call keko_loadout_helmet;
-["put", ["FTL", ["H_HelmetSpecB_sand"]]] call keko_loadout_helmet;
-["put", ["PIL", ["H_PilotHelmetHeli_O"]]] call keko_loadout_helmet;
+["put", ["DEFAULT", ["H_HelmetO_ViperSP_ghex_F"]]] call keko_loadout_helmet;
 
 
 
-_lr_radio = "TFAR_mr3000";
-_backpack_med = "B_TacticalPack_ocamo";
-_backpack_autorifle = "B_FieldPack_ocamo";
-_backpack_engineer = "B_Carryall_ocamo";
-_backpack_specialist = "B_FieldPack_ocamo";
+_lr_radio = "TFAR_rt1523g_bwmod";
+_backpack_med = "B_ViperHarness_ghex_F";
+_backpack_engineer = "B_ViperHarness_ghex_F";
+_backpack_specialist = "B_ViperHarness_ghex_F";
 ["put", ["DEFAULT", []]] call keko_loadout_backpack;
 ["put", ["LEA", [_lr_radio]]] call keko_loadout_backpack;
 ["put", ["SER", [_lr_radio]]] call keko_loadout_backpack;
@@ -130,11 +114,6 @@ _backpack_specialist = "B_FieldPack_ocamo";
 ["put", ["JTC", [_lr_radio]]] call keko_loadout_backpack;
 ["put", ["MED", [_backpack_med]]] call keko_loadout_backpack;
 ["put", ["DOC", [_backpack_med]]] call keko_loadout_backpack;
-["put", ["LMG", [_backpack_autorifle]]] call keko_loadout_backpack;
-["put", ["LAS", [_backpack_autorifle]]] call keko_loadout_backpack;
-["put", ["MMG", [_backpack_autorifle]]] call keko_loadout_backpack;
-["put", ["MAS", [_backpack_autorifle]]] call keko_loadout_backpack;
-["put", ["GRE", ["B_AssaultPack_ocamo"]]] call keko_loadout_backpack;
 ["put", ["ENG", [_backpack_engineer]]] call keko_loadout_backpack;
 ["put", ["EOD", [_backpack_engineer]]] call keko_loadout_backpack;
 ["put", ["SAT", [_backpack_specialist]]] call keko_loadout_backpack;
@@ -143,14 +122,10 @@ _backpack_specialist = "B_FieldPack_ocamo";
 ["put", ["AAA", [_backpack_specialist]]] call keko_loadout_backpack;
 ["put", ["PIL", ["ACE_NonSteerableParachute"]]] call keko_loadout_backpack;
 ["put", ["UAV", ["O_UAV_01_backpack_F"]]] call keko_loadout_backpack;
+["put", ["RAT", [_backpack_specialist]]] call keko_loadout_backpack;
 
 
 ["put", ["DEFAULT", []]] call keko_loadout_backpack_inventory;
-["put", ["LMG", [[2, _primary_mag_lmg]]]] call keko_loadout_backpack_inventory;
-["put", ["LAS", [[4, _primary_mag_lmg]]]] call keko_loadout_backpack_inventory;
-["put", ["MMG", []]] call keko_loadout_backpack_inventory;
-["put", ["MAS", [[3, _primary_mag_mmg]]]] call keko_loadout_backpack_inventory;
-["put", ["GRE", [[10, _primary_mag_grenadier]]]] call keko_loadout_backpack_inventory;
 ["put", ["SAT", [[1, _at_spec_mag]]]] call keko_loadout_backpack_inventory;
 ["put", ["AAT", [[2, _at_spec_mag]]]] call keko_loadout_backpack_inventory;
 ["put", ["SAA", [[1, _aa_spec_mag]]]] call keko_loadout_backpack_inventory;
@@ -163,33 +138,29 @@ _backpack_specialist = "B_FieldPack_ocamo";
 ["put", ["DOC", [[50, "ACE_elasticBandage"],[20, "ACE_fieldDressing"],[6, "ACE_salineIV_500"],[4, "ACE_salineIV"],[10, "ACE_tourniquet"],[10,"adv_aceSplint_splint"],[1,"adv_aceCPR_AED"]]]] call keko_loadout_backpack_inventory;
 ["put", ["ENG", [[1, "ToolKit"],[1, "ACE_wirecutter"],[1, "ACE_EntrenchingTool"]]]] call keko_loadout_backpack_inventory;
 ["put", ["EOD", [[6,"DemoCharge_Remote_Mag"],[2,"SatchelCharge_Remote_Mag"],[1,"ACE_DefusalKit"],[1,"ACE_Clacker"]]]] call keko_loadout_backpack_inventory;
+["put", ["RAT", [[1, _at_mag]]]] call keko_loadout_backpack_inventory;
 
 
 
-
-["put", ["DEFAULT", ["arifle_Katiba_F"]]] call keko_loadout_primary_weapon;
-["put", ["GRE", ["arifle_Katiba_GL_ARCO_pointer_F"]]] call keko_loadout_primary_weapon;
-["put", ["MAR", ["srifle_DMR_01_DMS_BI_F"]]] call keko_loadout_primary_weapon;
-["put", ["LMG", ["LMG_Zafir_F"]]] call keko_loadout_primary_weapon;
-["put", ["MMG", ["MMG_01_hex_F"]]] call keko_loadout_primary_weapon;
+["put", ["DEFAULT", ["arifle_ARX_ghex_F"]]] call keko_loadout_primary_weapon;
+["put", ["MAR", ["srifle_DMR_07_ghex_F"]]] call keko_loadout_primary_weapon;
 
 
-["put", ["DEFAULT", ["acc_pointer_IR","optic_Arco_blk_F"]]] call keko_loadout_primary_items;
-["put", ["MAR", ["acc_pointer_IR","optic_DMS","bipod_02_F_hex"]]] call keko_loadout_primary_items;
-["put", ["LMG", ["acc_pointer_IR"]]] call keko_loadout_primary_items;
-["put", ["MMG", ["acc_pointer_IR","bipod_02_F_hex"]]] call keko_loadout_primary_items;
+
+["put", ["DEFAULT", ["muzzle_snds_65_TI_ghex_F","acc_pointer_IR","optic_Arco_ghex_F"]]] call keko_loadout_primary_items;
+["put", ["MAR", ["muzzle_snds_65_TI_ghex_F","acc_pointer_IR","optic_DMS_ghex_F","bipod_02_F_blk"]]] call keko_loadout_primary_items;
 
 
 ["put", ["DEFAULT", ["hgun_Rook40_F"]]] call keko_loadout_secondary_weapon;
 
 
-["put", ["DEFAULT", []]] call keko_loadout_secondary_items;
+["put", ["DEFAULT", ["muzzle_snds_L"]]] call keko_loadout_secondary_items;
 
 
 ["put", ["DEFAULT", []]] call keko_loadout_tertiary_weapon;
-["put", ["RAT", ["launch_NLAW_F"]]] call keko_loadout_tertiary_weapon;
-["put", ["SAT", ["launch_RPG32_F"]]] call keko_loadout_tertiary_weapon;
-["put", ["SAA", ["launch_O_Titan_F"]]] call keko_loadout_tertiary_weapon;
+["put", ["RAT", ["launch_RPG32_ghex_F"]]] call keko_loadout_tertiary_weapon;
+["put", ["SAT", ["launch_O_Titan_short_ghex_F"]]] call keko_loadout_tertiary_weapon;
+["put", ["SAA", ["launch_O_Titan_ghex_F"]]] call keko_loadout_tertiary_weapon;
 
 
 ["put", ["DEFAULT", []]] call keko_loadout_tertiary_items;
@@ -198,15 +169,7 @@ _backpack_specialist = "B_FieldPack_ocamo";
 ["put", ["DEFAULT", []]] call keko_loadout_tertiary_mag;
 
 
-["put", ["DEFAULT", []]] call keko_loadout_optics;
-["put", ["LEA", ["Rangefinder"]]] call keko_loadout_optics;
-["put", ["SQL", ["Rangefinder"]]] call keko_loadout_optics;
-["put", ["FTL", ["Binocular"]]] call keko_loadout_optics;
-["put", ["LAS", ["Binocular"]]] call keko_loadout_optics;
-["put", ["MAS", ["Binocular"]]] call keko_loadout_optics;
-["put", ["AAT", ["Rangefinder"]]] call keko_loadout_optics;
-["put", ["AAA", ["Rangefinder"]]] call keko_loadout_optics;
-["put", ["JTC", ["Laserdesignator"]]] call keko_loadout_optics;
+["put", ["DEFAULT", ["Laserdesignator_02_ghex_F"]]] call keko_loadout_optics;
 
 
 ["put", ["DEFAULT", []]] call keko_loadout_goggles;
