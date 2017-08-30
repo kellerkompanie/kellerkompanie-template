@@ -31,7 +31,7 @@ keko_loadout_list = [
 ["put", ["DEFAULT", ["TRYK_U_B_OD_BLK","TRYK_U_B_OD_BLK_2","TRYK_U_B_ODTAN","TRYK_U_B_ODTAN_Tshirt","TRYK_U_B_BLK_TAN_1","TRYK_U_B_BLK_TAN_2"]]] call keko_loadout_uniform;
 
 
-["put", ["DEFAULT", ["gsg9_weste","V_PlateCarrier1_blk"]]] call keko_loadout_vest;
+["put", ["DEFAULT", ["gsg9_weste"]]] call keko_loadout_vest;
 ["put", ["PIL", ["V_TacVest_blk"]]] call keko_loadout_vest;
 
 

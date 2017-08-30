@@ -25,7 +25,7 @@ keko_loadout_list = [
 ["put", ["PIL", ["BWA3_Uniform_Helipilot"]]] call keko_loadout_uniform;
 
 
-["put", ["DEFAULT", ["EF_GSG9_1","seko_weste"]]] call keko_loadout_vest;
+["put", ["DEFAULT", ["seko_weste","sek_weste","sekp_weste"]]] call keko_loadout_vest;
 ["put", ["PIL", ["V_TacVest_blk"]]] call keko_loadout_vest;
 
 
