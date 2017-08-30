@@ -110,13 +110,18 @@ switch (_param_faction) do {
 		
 	};
 	case 53: {
-		// Syndikat
-		#include "factions\053_syndikat.sqf"
+		// Syndikat Bandits
+		#include "factions\053_syndikat_bandits.sqf"
 		
 	};
 	case 54: {
+		// Syndikat Paramilitary
+		#include "factions\054_syndikat_paramilitary.sqf"
+		
+	};
+	case 55: {
 		// Gendamerie
-		#include "factions\054_gendamerie.sqf"
+		#include "factions\055_gendamerie.sqf"
 		
 	};
 

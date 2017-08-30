@@ -53,8 +53,9 @@ class param_faction
 		50, // NATO Apex
 		51, // CTRG Apex
 		52, // Viper
-		53, // Syndikat
-		54, // Gendamerie
+		53, // Syndikat Bandits
+		54, // Syndikat Paramilitary
+		55, // Gendamerie
 
 		100, // US OCP
 		101, // US UCP
@@ -105,7 +106,8 @@ class param_faction
 		"[Minimal][APEX] NATO Tropical",
 		"[Minimal][APEX] CTRG Tropical",
 		"[Minimal][APEX] CSAT Viper",
-		"[Minimal][APEX] Syndikat",
+		"[Minimal][APEX] Syndikat (Bandits)",
+		"[Minimal][APEX] Syndikat (Paramilitary)",
 		"[Minimal][APEX] Gendamerie",		
 
 		"[Main] U.S. Army - Operational Camouflage Pattern",
