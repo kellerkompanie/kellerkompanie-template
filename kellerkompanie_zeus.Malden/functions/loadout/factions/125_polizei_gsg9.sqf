@@ -1,4 +1,4 @@
-// BW KSK Tropen
+// GSG9
 keko_loadout_list = [
 	["---- Führung ----", ""], //0
 	["Platoon Lead", "LEA"], //1
