@@ -185,6 +185,9 @@ _backpack_specialist = "B_FieldPack_cbr";
 
 
 ["put", ["DEFAULT", ["arifle_MX_Black_F","arifle_MX_F"]]] call keko_loadout_primary_weapon;
+["put", ["LEA", ["arifle_MXC_Black_F","arifle_MXC_F"]]] call keko_loadout_primary_weapon;
+["put", ["MED", ["arifle_MXC_Black_F","arifle_MXC_F"]]] call keko_loadout_primary_weapon;
+["put", ["DOC", ["arifle_MXC_Black_F","arifle_MXC_F"]]] call keko_loadout_primary_weapon;
 ["put", ["GRE", ["arifle_MX_GL_Black_F","arifle_MX_GL_F"]]] call keko_loadout_primary_weapon;
 ["put", ["MAR", ["arifle_MXM_Black_F","arifle_MXM_F"]]] call keko_loadout_primary_weapon;
 ["put", ["LMG", ["arifle_MX_SW_Black_F","arifle_MX_SW_F"]]] call keko_loadout_primary_weapon;
@@ -194,11 +197,18 @@ _backpack_specialist = "B_FieldPack_cbr";
 
 
 ["put", ["DEFAULT", ["acc_pointer_IR","optic_Hamr"]]] call keko_loadout_primary_items;
+["put", ["LEA", ["acc_pointer_IR","optic_ACO_grn"]]] call keko_loadout_primary_items;
+["put", ["DOC", ["acc_pointer_IR","optic_ACO_grn"]]] call keko_loadout_primary_items;
+["put", ["MED", ["acc_pointer_IR","optic_ACO_grn"]]] call keko_loadout_primary_items;
 ["put", ["MAR", ["acc_pointer_IR","optic_SOS","bipod_01_F_blk"]]] call keko_loadout_primary_items;
 ["put", ["LMG", ["acc_pointer_IR","bipod_01_F_blk"]]] call keko_loadout_primary_items;
 ["put", ["MMG", ["acc_pointer_IR","bipod_01_F_blk"]]] call keko_loadout_primary_items;
 ["put", ["SNI", ["optic_LRPS"]]] call keko_loadout_primary_items;
 ["put", ["SPO", ["muzzle_snds_H","optic_Hamr","bipod_01_F_blk"]]] call keko_loadout_primary_items;
+
+
+
+
 
 
 ["put", ["DEFAULT", ["hgun_Pistol_heavy_01_F"]]] call keko_loadout_secondary_weapon;
