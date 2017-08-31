@@ -125,89 +125,125 @@ if(["containsKey", _prefix] call keko_loadout_linkable_items) then {
 
 
 if(count _uniform != 0) then {
-	player forceAddUniform (selectRandom _uniform);
+	_random_uniform = selectRandom _uniform;
+	_random_uniform = [_random_uniform] call keko_fnc_replaceKeyword;
+	player forceAddUniform _random_uniform;
 	
-	if(count _vest_inventory != 0) then {
+	if(count _uniform_inventory != 0) then {
 		{
-			for "_i" from 1 to (_x select 0) do {player addItemToUniform (_x select 1);};		
+			for "_i" from 1 to (_x select 0) do {
+				_item = _x select 1;
+				_item = [_item] call keko_fnc_replaceKeyword;
+				player addItemToUniform _item;
+			};		
 		} forEach _uniform_inventory;
 	};
 };
 
 if(count _vest != 0) then {
-	player addVest (selectRandom _vest);
+	_random_vest = selectRandom _vest;
+	_random_vest = [_random_vest] call keko_fnc_replaceKeyword;
+	player addVest _random_vest;
 
 	if(count _vest_inventory != 0) then {		
 		{ 
-			for "_i" from 1 to (_x select 0) do {player addItemToVest (_x select 1);};		
+			for "_i" from 1 to (_x select 0) do {
+				_item = _x select 1;
+				_item = [_item] call keko_fnc_replaceKeyword;
+				player addItemToVest _item;
+			};		
 		} forEach _vest_inventory;
 	};
 };
 
 if(count _backpack != 0) then {
-	player addBackpack (selectRandom _backpack);
+	_random_backpack = selectRandom _backpack;
+	_random_backpack = [_random_backpack] call keko_fnc_replaceKeyword;
+	player addBackpack _random_backpack;
 
 	if(count _backpack_inventory != 0) then {		
 		{ 
-			for "_i" from 1 to (_x select 0) do {player addItemToBackpack (_x select 1);};		
+			for "_i" from 1 to (_x select 0) do {
+				_item = _x select 1;
+				_item = [_item] call keko_fnc_replaceKeyword;
+				player addItemToBackpack _item;
+			};		
 		} forEach _backpack_inventory;
 	};
 };
 
 if(count _helmet != 0) then {
-	player addHeadgear (selectRandom _helmet);
+	_random_helmet = selectRandom _helmet;
+	_random_helmet = [_random_helmet] call keko_fnc_replaceKeyword;
+	player addHeadgear _random_helmet;
 };
 
 
 if(count _primary_weapon != 0) then {
-	player addWeapon (selectRandom _primary_weapon);
+	_random_primary_weapon = selectRandom _primary_weapon;
+	_random_primary_weapon = [_random_primary_weapon] call keko_fnc_replaceKeyword;
+	player addWeapon _random_primary_weapon;
 
 	if(count _primary_items != 0) then {
 		{ 
-			player addPrimaryWeaponItem _x; 
+			_item = [_x] call keko_fnc_replaceKeyword; 
+			player addPrimaryWeaponItem _item; 
 		} forEach _primary_items;
 	};	
 
 	if(count _primary_mag != 0) then {
-		player addItemToVest (_primary_mag select 0); 
+		_item = [_primary_mag select 0] call keko_fnc_replaceKeyword; 
+		player addItemToVest _item; 
 	};
 };
 
 if(count _secondary_weapon != 0) then {
-	player addWeapon (selectRandom _secondary_weapon);
+	_random_secondary_weapon = selectRandom _secondary_weapon;
+	_random_secondary_weapon = [_random_secondary_weapon] call keko_fnc_replaceKeyword;
+	player addWeapon _random_secondary_weapon;
 
 	if(count _secondary_items != 0) then {
 		{
-			player addHandgunItem _x; 
+			_item = [_x] call keko_fnc_replaceKeyword; 
+			player addHandgunItem _item; 
 		} forEach _secondary_items;
 	};	
 
 	if(count _secondary_mag != 0) then {
-		player addItemToUniform (_secondary_mag select 0); 
+		_item = [_secondary_mag select 0] call keko_fnc_replaceKeyword;
+		player addItemToUniform _item; 
 	};
 };
 
 if(count _tertiary_weapon != 0) then {
-	player addWeapon (selectRandom _tertiary_weapon);
+	_random_tertiary_weapon = selectRandom _tertiary_weapon;
+	_random_tertiary_weapon = [_random_tertiary_weapon] call keko_fnc_replaceKeyword;
+	player addWeapon _random_tertiary_weapon;
 
 	if(count _tertiary_items != 0) then {
 		{ 
-			player addSecondaryWeaponItem _x; 
+			_item = [_x] call keko_fnc_replaceKeyword;
+			player addSecondaryWeaponItem _item; 
 		} forEach _tertiary_items;
 	};
 
 	if(count _tertiary_mag != 0) then {
-		player addItemToBackpack (_tertiary_mag select 0); 
+		_item = [_tertiary_mag select 0] call keko_fnc_replaceKeyword;
+		player addItemToBackpack _item; 
 	};
 };
 
 
 if(count _goggles != 0) then {
-	player addGoggles (selectRandom _goggles);
+	_random_goggles = selectRandom _goggles;
+	_random_goggles = [_random_goggles] call keko_fnc_replaceKeyword;
+	player addGoggles _random_goggles;
 };
 
 if(count _optics != 0) then {
-	player addWeapon (selectRandom _optics);
+	_random_optics = selectRandom _optics;
+	_random_optics = [_random_optics] call keko_fnc_replaceKeyword;
+	player addWeapon _random_optics;
 };
 
 if(count _attributes != 0) then {
@@ -223,8 +259,6 @@ if(!isNil "_insignia") then {
 };*/
 
 player setVariable ["keko_current_role", _prefix];
-
-
 
 
 

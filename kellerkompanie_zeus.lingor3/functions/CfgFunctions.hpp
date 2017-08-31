@@ -10,17 +10,6 @@ class keko
 	};
 	class logistics
 	{
-		class crateAA {};
-		class crateAT {};
-		class crateEOD {};
-		class crateGrenades {};
-		class crateLarge {};
-		class crateMedic {};
-		class crateMG {};
-		class crateNormal {};
-		class crateStuff {};
-		class crateSupport {};
-		class crateTeam {};
 		class fillCrate {};
 	};
 	class logistics_internal
@@ -35,6 +24,7 @@ class keko
 		class applyLoadout {};
 		class giveLoadout {};
 		class loadoutVariables {};
+		class replaceKeyword {};
 	};
 	class loadout_internal
 	{

@@ -7,7 +7,7 @@ keko_loadout_variables_set = false;
 
 
 
-
+keko_loadout_keywords = ["new", []] call OO_HASHMAP;
 
 
 keko_loadout_uniform = ["new", []] call OO_HASHMAP;
@@ -63,6 +63,19 @@ keko_logistic_crates_content = ["new", []] call OO_HASHMAP;
 
 // ----- START Default Parameters ----- //
 
+
+
+keko_loadout_uniform_inventory_default = [[15, "ACE_fieldDressing"],[1, "ACE_morphine"],[3, "ACE_tourniquet"],[1, "ACE_MapTools"],[1, "ACE_Flashlight_XL50"],[1, "ACE_IR_Strobe_Item"],[1, "#SECONDARY_MAG"],[1, "#SMOKE_WHITE"],[1, "#SMOKE_GREEN"]];
+keko_loadout_vest_inventory_default = [[5, "#PRIMARY_MAG"],[5, "#PRIMARY_MAG_TRACER"],[1, "#SMOKE_WHITE"],[3, "#GRENADE"]];
+
+keko_loadout_vest_inventory_medic_default = [[10, "ACE_epinephrine"],[10, "ACE_morphine"],[1,"ACE_surgicalKit"],[10, "ACE_quikclot"],[3, "#PRIMARY_MAG"],[3, "#PRIMARY_MAG_TRACER"],[2, "#SMOKE_WHITE"]];
+
+keko_loadout_backpack_inventory_med = [[50, "ACE_elasticBandage"],[20, "ACE_fieldDressing"],[6, "ACE_salineIV_500"],[4, "ACE_salineIV"],[10, "ACE_tourniquet"],[10,"adv_aceSplint_splint"]];
+keko_loadout_backpack_inventory_doc = [[50, "ACE_elasticBandage"],[20, "ACE_fieldDressing"],[6, "ACE_salineIV_500"],[4, "ACE_salineIV"],[10, "ACE_tourniquet"],[10,"adv_aceSplint_splint"],[1,"adv_aceCPR_AED"]];
+keko_loadout_backpack_inventory_eod = [[6,"DemoCharge_Remote_Mag"],[2,"SatchelCharge_Remote_Mag"],[1,"ACE_DefusalKit"],[1,"ACE_Clacker"]];
+keko_loadout_backpack_inventory_eng = [[1, "ToolKit"],[1, "ACE_wirecutter"],[1, "ACE_EntrenchingTool"]];
+
+
 keko_logistic_crate_large_blu = "B_CargoNet_01_ammo_F";
 keko_logistic_crate_normal_blu = "Box_NATO_Ammo_F";
 keko_logistic_crate_launcher_blu = "Box_NATO_WpsLaunch_F";
@@ -88,6 +101,67 @@ keko_logistic_crate_eod_ind = "Box_IND_AmmoOrd_F";
 keko_logistic_crate_grenades_ind = "Box_Ind_Grenades_F";
 
 keko_logistic_crate_medic = "ACE_medicalSupplyCrate_advanced";
+
+
+
+keko_logistic_crate_fireteam_content = [
+		[10, "#PRIMARY_MAG", "AMMO"],
+		[10, "#PRIMARY_MAG_TRACER", "AMMO"],		
+		[6, "#PRIMARY_MAG_LMG", "AMMO"],
+		[2, "#SECONDARY_MAG", "AMMO"],
+
+		[2, "#RAT_LAUNCHER", "WEAPON"],
+
+		[6, "#GRENADIER_MAG", "AMMO"],
+		[6, "#GRENADE", "AMMO"],
+		[4, "#SMOKE_WHITE", "AMMO"],
+		[4, "#SMOKE_GREEN", "AMMO"],
+
+		[20, "ACE_fieldDressing", "ITEM"],	
+		[4, "ACE_morphine", "ITEM"],
+		[4, "ACE_epinephrine", "ITEM"],
+		[8, "ACE_tourniquet", "ITEM"],
+		[6, "adv_aceSplint_splint", "ITEM"],
+
+		[2, "ACE_CableTie", "ITEM"]
+	];
+
+keko_logistic_crate_inf_content = [
+		[30, "#PRIMARY_MAG", "AMMO"],
+		[30, "#PRIMARY_MAG_TRACER", "AMMO"],		
+		[10, "#PRIMARY_MAG_LMG", "AMMO"],
+		[10, "#PRIMARY_MAG_MARKSMAN", "AMMO"],
+		[6, "#SECONDARY_MAG", "AMMO"],
+
+		[10, "#GRENADIER_MAG", "AMMO"]
+	];
+
+keko_logistic_crate_gre_content = [
+		[20, "#GRENADIER_MAG", "AMMO"],
+		[20, "#GRENADE", "AMMO"],
+		[10, "#SMOKE_WHITE", "AMMO"],
+		[10, "#SMOKE_GREEN", "AMMO"]
+	];
+
+keko_logistic_crate_mg_content = [
+		[10, "#PRIMARY_MAG_LMG", "AMMO"],
+		[10, "#PRIMARY_MAG_MMG", "AMMO"],
+		[1, "#BACKPACK_AUTORIFLE", "ITEM"],
+		[2, "ACE_SpareBarrel"]
+	];
+
+keko_logistic_crate_at = [
+		[1, "#SAT_LAUNCHER", "WEAPON"],
+		[4, "#AT_MAG", "AMMO"],
+		[1, "#BACKPACK_SPECIALIST", "ITEM"],
+		[4, "#RAT_LAUNCHER", "WEAPON"]
+	];
+
+keko_logistic_crate_aa = [
+		[1, "#SAA_LAUNCHER", "WEAPON"],
+		[4, "#AA_MAG", "AMMO"],
+		[1, "#BACKPACK_SPECIALIST", "ITEM"]
+	];
 
 keko_logistic_crate_medic_content = [
 		//[0, "ACE_atropine"],	// Atropin auto injector
@@ -173,6 +247,47 @@ keko_logistic_crate_rations_content = [
 
 		[10, "ACE_banana", "ITEM"]
 	];
+
+keko_crate_list = [
+	["---- Munition ----", "LOGISTIC_FNC_NIL", ""],
+	["Fire-Team Kiste", "LOGISTIC_CRATE_FT", keko_logistic_crate_normal_blu],
+	["Infanterie Kiste", "LOGISTIC_CRATE_INF", keko_logistic_crate_normal_blu],
+	["Granaten Kiste", "LOGISTIC_CRATE_GRE", keko_logistic_crate_grenades_blu],
+	["MG Kiste", "LOGISTIC_CRATE_MG", keko_logistic_crate_mg_blu],
+	["AT Kiste", "LOGISTIC_CRATE_AT", keko_logistic_crate_launcher_blu],
+	["AA Kiste", "LOGISTIC_CRATE_AA", keko_logistic_crate_launcher_blu], 
+	["---- Support ----", "LOGISTIC_FNC_NIL", ""],
+	["Medic Kiste", "LOGISTIC_CRATE_MED", keko_logistic_crate_medic],
+	["Support Kiste", "LOGISTIC_CRATE_SUP", keko_logistic_crate_support_blu],
+	["Sprengmittel Kiste", "LOGISTIC_CRATE_EOD", keko_logistic_crate_eod_blu],
+	["Rationen Kiste", "LOGISTIC_CRATE_RATIONS", keko_logistic_crate_support_blu],
+	["Leere Kiste", "LOGISTIC_CRATE_EMPTY", keko_logistic_crate_support_blu],
+	["---- Andere ----", "LOGISTIC_FNC_NIL", ""],
+	["Ersatzreifen","LOGISTIC_WHEEL", ""],
+	["Ersatzkette","LOGISTIC_TRACK", ""],
+	["", "LOGISTIC_FNC_NIL", ""],
+	["Kisten in der Nähe löschen","LOGISTIC_FNC_DELETE", ""]
+];
+
+["put", ["LOGISTIC_CRATE_FT", keko_logistic_crate_fireteam_content]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_INF", keko_logistic_crate_inf_content]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_GRE", keko_logistic_crate_gre_content]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_MG", keko_logistic_crate_mg_content]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_AT", keko_logistic_crate_at]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_AA", keko_logistic_crate_aa]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_MED", keko_logistic_crate_medic_content]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_SUP", keko_logistic_crate_support_content]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_EOD", keko_logistic_crate_eod_content]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_RATIONS", keko_logistic_crate_rations_content]] call keko_logistic_crates_content;
+
+
+
+
+
+
+
+
+
 
 
 // ----- END Default Parameters ----- //
