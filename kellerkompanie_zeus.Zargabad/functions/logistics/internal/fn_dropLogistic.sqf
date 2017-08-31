@@ -15,7 +15,7 @@
  * Public: No
  */
 
-KEKO_sriptfnc_dropLogistic = {
+keko_sriptfnc_dropLogistic = {
 	params [
 		["_crate", objNull, [objNull]],
 		["_targetPos", [0,0,0], [[]]]
@@ -41,11 +41,11 @@ KEKO_sriptfnc_dropLogistic = {
 };
 
 {
-	KEKO_action_dropLogistic = _x addAction [
+	keko_action_dropLogistic = _x addAction [
 		("<t color=""#FFFFFF"">" + ("Abwurf vorbereiten") + "</t>"), 
 		{
 			openmap true;
-			[_this select 0] onMapSingleClick "openmap false; [_this select 0,_pos] spawn KEKO_sriptfnc_dropLogistic; onmapsingleclick '';";
+			[_this select 0] onMapSingleClick "openmap false; [_this select 0,_pos] spawn keko_sriptfnc_dropLogistic; onmapsingleclick '';";
 			(_this select 0) removeAction (_this select 2);
 		},
 		nil,3,false,true,"","player distance cursortarget <5"

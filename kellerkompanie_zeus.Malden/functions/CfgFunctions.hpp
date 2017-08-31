@@ -21,6 +21,7 @@ class keko
 		class crateStuff {};
 		class crateSupport {};
 		class crateTeam {};
+		class fillCrate {};
 	};
 	class logistics_internal
 	{

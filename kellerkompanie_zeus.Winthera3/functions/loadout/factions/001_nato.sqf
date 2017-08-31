@@ -221,10 +221,13 @@ _backpack_specialist = "B_FieldPack_cbr";
 ["put", ["SPO", ["muzzle_snds_acp","acc_flashlight_pistol","optic_MRD"]]] call keko_loadout_secondary_items;
 
 
+_rat_launcher = "launch_NLAW_F";
+_sat_launcher = "launch_B_Titan_short_F";
+_saa_launcher = "launch_B_Titan_F";
 ["put", ["DEFAULT", []]] call keko_loadout_tertiary_weapon;
-["put", ["RAT", ["launch_NLAW_F"]]] call keko_loadout_tertiary_weapon;
-["put", ["SAT", ["launch_B_Titan_short_F"]]] call keko_loadout_tertiary_weapon;
-["put", ["SAA", ["launch_B_Titan_F"]]] call keko_loadout_tertiary_weapon;
+["put", ["RAT", [_rat_launcher]]] call keko_loadout_tertiary_weapon;
+["put", ["SAT", [_sat_launcher]]] call keko_loadout_tertiary_weapon;
+["put", ["SAA", [_saa_launcher]]] call keko_loadout_tertiary_weapon;
 
 
 ["put", ["DEFAULT", []]] call keko_loadout_tertiary_items;
@@ -257,3 +260,104 @@ _backpack_specialist = "B_FieldPack_cbr";
 
 ["put", ["DEFAULT", []]] call keko_loadout_linkable_items;
 ["put", ["UAV", ["B_UavTerminal"]]] call keko_loadout_linkable_items;
+
+
+
+
+
+
+
+
+keko_crate_list = [
+	["---- Munition ----", "LOGISTIC_FNC_NIL", ""],
+	["Fire-Team Kiste", "LOGISTIC_CRATE_FT", keko_logistic_crate_normal_blu],
+	["Infanterie Kiste", "LOGISTIC_CRATE_INF", keko_logistic_crate_normal_blu],
+	["Granaten Kiste", "LOGISTIC_CRATE_GRE", keko_logistic_crate_grenades_blu],
+	["MG Kiste", "LOGISTIC_CRATE_MG", keko_logistic_crate_mg_blu],
+	["AT Kiste", "LOGISTIC_CRATE_AT", keko_logistic_crate_launcher_blu],
+	["AA Kiste", "LOGISTIC_CRATE_AA", keko_logistic_crate_launcher_blu], 
+	["---- Support ----", "LOGISTIC_FNC_NIL", ""],
+	["Medic Kiste", "LOGISTIC_CRATE_MED", keko_logistic_crate_medic],
+	["Support Kiste", "LOGISTIC_CRATE_SUP", keko_logistic_crate_support_blu],
+	["Sprengmittel Kiste", "LOGISTIC_CRATE_EOD", keko_logistic_crate_eod_blu],
+	["Rationen Kiste", "LOGISTIC_CRATE_RATIONS", keko_logistic_crate_support_blu],
+	["Leere Kiste", "LOGISTIC_CRATE_EMPTY", keko_logistic_crate_support_blu],
+	["---- Andere ----", "LOGISTIC_FNC_NIL", ""],
+	["Ersatzreifen","LOGISTIC_WHEEL", ""],
+	["Ersatzkette","LOGISTIC_TRACK", ""],
+	["", "LOGISTIC_FNC_NIL", ""],
+	["Kisten in der Nähe löschen","LOGISTIC_FNC_DELETE", ""]
+];
+
+
+["put", ["LOGISTIC_CRATE_FT", [
+		[10, _primary_mag, "AMMO"],
+		[10, _primary_mag_tracer, "AMMO"],		
+		[6, _primary_mag_lmg, "AMMO"],
+		[2, _secondary_mag, "AMMO"],
+
+		[2, _rat_launcher, "WEAPON"],
+
+		[6, _primary_mag_grenadier, "AMMO"],
+		[6, _grenade, "AMMO"],
+		[4, _smoke_white, "AMMO"],
+		[4, _smoke_green, "AMMO"],
+
+		[20, "ACE_fieldDressing", "ITEM"],	
+		[4, "ACE_morphine", "ITEM"],
+		[4, "ACE_epinephrine", "ITEM"],
+		[8, "ACE_tourniquet", "ITEM"],
+		[6, "adv_aceSplint_splint", "ITEM"],
+
+		[2, "ACE_CableTie", "ITEM"]
+	]]] call keko_logistic_crates_content;
+
+["put", ["LOGISTIC_CRATE_INF", [
+		[30, _primary_mag, "AMMO"],
+		[30, _primary_mag_tracer, "AMMO"],		
+		[10, _primary_mag_lmg, "AMMO"],
+		[10, _primary_mag_marksman, "AMMO"],
+		[6, _secondary_mag, "AMMO"],
+
+		[10, _primary_mag_grenadier, "AMMO"]
+	]]] call keko_logistic_crates_content;
+
+["put", ["LOGISTIC_CRATE_GRE", [
+		[20, _primary_mag_grenadier, "AMMO"],
+		[20, _grenade, "AMMO"],
+		[10, _smoke_white, "AMMO"],
+		[10, _smoke_green, "AMMO"]
+	]]] call keko_logistic_crates_content;
+
+["put", ["LOGISTIC_CRATE_MG", [	
+		[10, _primary_mag_lmg, "AMMO"],
+		[10, _primary_mag_mmg, "AMMO"],
+		[1, _backpack_autorifle, "ITEM"],
+		[2, "ACE_SpareBarrel"]
+	]]] call keko_logistic_crates_content;
+
+["put", ["LOGISTIC_CRATE_AT", [
+		[1, _sat_launcher, "WEAPON"],
+		[4, _at_spec_mag, "AMMO"],
+		[1, _backpack_specialist, "ITEM"],
+		[4, _rat_launcher, "WEAPON"]
+	]]] call keko_logistic_crates_content;
+
+["put", ["LOGISTIC_CRATE_AA", [
+		[1, _saa_launcher, "WEAPON"],
+		[4, _aa_spec_mag, "AMMO"],
+		[1, _backpack_specialist, "ITEM"]
+	]]] call keko_logistic_crates_content;
+
+
+["put", ["LOGISTIC_CRATE_MED", keko_logistic_crate_medic_content]] call keko_logistic_crates_content;
+
+["put", ["LOGISTIC_CRATE_SUP", keko_logistic_crate_support_content]] call keko_logistic_crates_content;
+
+["put", ["LOGISTIC_CRATE_EOD", keko_logistic_crate_eod_content]] call keko_logistic_crates_content;
+
+["put", ["LOGISTIC_CRATE_RATIONS", keko_logistic_crate_rations_content]] call keko_logistic_crates_content;
+
+
+	
+	
