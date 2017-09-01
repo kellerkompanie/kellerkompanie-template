@@ -150,14 +150,14 @@ keko_logistic_crate_mg_content = [
 		[2, "ACE_SpareBarrel"]
 	];
 
-keko_logistic_crate_at = [
+keko_logistic_crate_at_content = [
 		[1, "#SAT_LAUNCHER", "WEAPON"],
 		[4, "#AT_MAG", "AMMO"],
 		[1, "#BACKPACK_SPECIALIST", "ITEM"],
 		[4, "#RAT_LAUNCHER", "WEAPON"]
 	];
 
-keko_logistic_crate_aa = [
+keko_logistic_crate_aa_content = [
 		[1, "#SAA_LAUNCHER", "WEAPON"],
 		[4, "#AA_MAG", "AMMO"],
 		[1, "#BACKPACK_SPECIALIST", "ITEM"]
@@ -273,8 +273,8 @@ keko_crate_list = [
 ["put", ["LOGISTIC_CRATE_INF", keko_logistic_crate_inf_content]] call keko_logistic_crates_content;
 ["put", ["LOGISTIC_CRATE_GRE", keko_logistic_crate_gre_content]] call keko_logistic_crates_content;
 ["put", ["LOGISTIC_CRATE_MG", keko_logistic_crate_mg_content]] call keko_logistic_crates_content;
-["put", ["LOGISTIC_CRATE_AT", keko_logistic_crate_at]] call keko_logistic_crates_content;
-["put", ["LOGISTIC_CRATE_AA", keko_logistic_crate_aa]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_AT", keko_logistic_crate_at_content]] call keko_logistic_crates_content;
+["put", ["LOGISTIC_CRATE_AA", keko_logistic_crate_aa_content]] call keko_logistic_crates_content;
 ["put", ["LOGISTIC_CRATE_MED", keko_logistic_crate_medic_content]] call keko_logistic_crates_content;
 ["put", ["LOGISTIC_CRATE_SUP", keko_logistic_crate_support_content]] call keko_logistic_crates_content;
 ["put", ["LOGISTIC_CRATE_EOD", keko_logistic_crate_eod_content]] call keko_logistic_crates_content;
