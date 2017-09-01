@@ -40,6 +40,9 @@ Die Mission selbst (platzierte Gegenstände auf der Karte etc.) wird abgespeiche
 |*pictures*|Template|enthält etwaige Bilder, wie bspw. den Ladebildschirm|
 |*scripts*|Template|enthält *externe* Skripte, wie bspw. zufälliges Wetter oder Atombomben etc.|
 
+### Hash-Maps
+Standardmäßig von Bohemia nicht mitgeliefert, wurde eine Implementierung von Hash-Maps (https://en.wikipedia.org/wiki/Hash_table) by Code34 hinzugefügt, wodurch gerade beim Thema Loadout und Kisten einiges dynamischer generiert werden kann. Die Quellen und Dokumentation dazu finden sich hier: https://forums.bistudio.com/forums/topic/171829-object-oriented-hashmap/
+
 ## Parameter
 Die Einstellungen der einzelnen Module (ACE etc.) sind von Haus aus so eingestellt, dass sie dem Standard entsprechen. Nichtsdestotrotz kann man verschiedene Parameter einstellen. Dies mach man, indem man auf dem Server die Mission lädt und im Slotting Screen oben rechts auf Parameter geht. Dort kann man dann die Werte je nach Mission anpassen.
 ![](https://github.com/Schwaggot/kellerkompanie-template/blob/master/doc/parameter01.jpg?raw=true)
@@ -223,6 +226,8 @@ Guckt man sich die Dateien der einzelnen Fraktionen im Ordner `functions\loadout
 
 Die Zeile `["put", ["MED", ["V_PlateCarrierSpec_rgr"]]] call keko_loadout_vest;` besagt bspw. dass die Rolle mit dem Kürzel `MED` (in diesem Fall Medic) die Weste mit der class `V_PlateCarrierSpec_rgr` erhalten soll. Soll beim zuweisen der Loadouts zwischen verschiedenen classes zufällig ausgewählt werden, so übergibt man mehrere Parameter über das Array, bpsw. `["put", ["PIL", ["H_PilotHelmetHeli_B","H_HelmetSpecB"]]] call keko_loadout_helmet;`. Wann immer jemand spawnt oder an die Loadout Kiste geht wird nun für die Rolle des Piloten (Kürzel `PIL`) zufällig zwischen dem Helm `H_PilotHelmetHeli_B` und `H_HelmetSpecB` ausgewählt. Man erhält auf diese Art und Weise eine gewisse Abwechslung im Loadout und nicht alle sehen gleich aus.
 
+Gewisse Faktoren, die über alle Fraktionen hinweg gleich sind wurden ausgelagert in die Datei `functions\loadout\fn_loadoutVariables.sqf`, so z.B. der Standardinhalt eines Medic Rucksacks: `keko_loadout_backpack_inventory_med = [[50, "ACE_elasticBandage"],[20, "ACE_fieldDressing"],[6, "ACE_salineIV_500"],[4, "ACE_salineIV"],[10, "ACE_tourniquet"],[10,"adv_aceSplint_splint"]];`. Das Array aus Tupeln gibt dabei die einzelnen Items und ihre Menge an wie sie nachher in den Rucksack hinzugefügt werden.
+
 Es können bei Bedarf weitere Kürzel hinzugefügt werden, es sollte allerdings darauf geachtet werden, dass diese nur aus Großbuchstaben bestehen und immer genau 3 Buchstaben haben. Auch sollten Überschneidungen zu bisher definierten Kürzeln vermieden werden.
 
 
@@ -234,3 +239,45 @@ Als weitere Schlüsselwörter werden alle Strings angesehen, die mit einem `#` a
 Desweiteren werden mithilfe dieser Keywords auch die Inhalte der Logistik Kisten bestimmt. Man gibt dann bspw. an, dass eine Infanterie Munitionskiste jeweils 10 von `#PRIMARY_MAG`, `#PRIMARY_MAG_TRACER` und `#PRIMARY_MAG_LMG` enthält und diese werden dann passend zu der Fraktion mit den konkreten classnames bestückt.
 
 Potentiell können weitere, benutzerdefinierte Schlüsselwörter angelegt und benutzt werden. Um Überschneidungen mit vorhanden classnames zu vermeiden wird als Konvention voran ein `#` gesetzt und der Rest groß geschrieben.
+
+
+## Logistik Kisten
+An der Fahne in der Base können standardmäßig Kisten generiert werden, welche für die jeweilige Fraktion den passenden Inhalt haben, also von den Magazinen etc. her zugeschnitten sind auf die Waffen, die ausgeteilt wurden. Die Interaktion erfolgt ähnlich wie beim Laodout über das Mausradmenü und einen Logistik Dialog. 
+
+Welche Kisten für welche Fraktion zur Verfügung stehen wird über das Array `keko_crate_list` definiert. Standardmäßig befindet sich die Definition in `functions\loadout\fn_loadoutVariables.sqf`, kann jedoch nach belieben in den einzelnen Fraktionen überschrieben werden. Folgende Arten von Kisten werden standardmäßig unterstützt:
+
+|Kürzel|Kiste|
+|---|---|
+|`LOGISTIC_CRATE_FT`|Fire-Team Kiste, enthält Zeug um ein normales Fire-Team zu versorgen.|
+|`LOGISTIC_CRATE_INF`|Infanterie Kiste, enthält eine Ladung Standard Infanterie Munition.|
+|`LOGISTIC_CRATE_GRE`|Granaten Kiste, enthält Rauchgranaten, Sprengranate, ULGs usw.|
+|`LOGISTIC_CRATE_MG`|MG Kiste, enthält Munition für LMGs und MMGs.|
+|`LOGISTIC_CRATE_AT`|AT Kiste, enthält Einmalwerfer und Munition für Mehrfachwerfer.|
+|`LOGISTIC_CRATE_AA`|AA Kiste, enthält Munition für Luftabwehrlauncher.|
+|`LOGISTIC_CRATE_MED`|Medic Kiste, enthält medizinisches Material.|
+|`LOGISTIC_CRATE_SUP`|Support Kiste, enthält alles mögliche, von Sandbags bis Rangecards.|
+|`LOGISTIC_CRATE_EOD`|Sprengmittel Kiste, enthält Zeug zum Sprengen und Entschärfen.|
+|`LOGISTIC_CRATE_RATIONS`|Rationen Kiste, enthält Zigaretten, Bananen etc.|
+|`LOGISTIC_CRATE_EMPTY`|Leere Kiste, enthält nichts.|
+
+Der Standardinhalt der Kisten wird ebenfalls in `functions\loadout\fn_loadoutVariables.sqf` festgelegt und benutzt die Keywords um passende Magazine für die Fraktion zur Verfügung zu stellen. Beispiel:
+
+```
+keko_logistic_crate_at_content = [
+	[1, "#SAT_LAUNCHER", "WEAPON"],
+	[4, "#AT_MAG", "AMMO"],
+	[1, "#BACKPACK_SPECIALIST", "ITEM"],
+	[4, "#RAT_LAUNCHER", "WEAPON"]
+];
+```
+Dabei muss jeweils auch angegeben um welche Art von Item es sich handelt, da je nachdem andere Funktionen benutzt werden müssen um das Item in die Kiste zu befördern (thx Bohemia). Aktuell wird unterschieden zwischen `AMMO`, `ITEM` und `WEAPON`. Auch die genauen Inhalte der Kisten können bei Bedarf je nach Fraktion überschrieben werden. Man kann auch neue Kisten mit neuen Kürzeln und anderen Kistenarten hinzufügen. Die Art der Kiste (also das Objekt ingame) selbst wird in den Tripeln aus `keko_crate_list` bestimmt. Die normalen Vanilla Kisten sind aufgelistet in `functions\loadout\fn_loadoutVariables.sqf`.
+
+Bei Betätigung des Logistik Dialogs werden die Kisten unter den Füßen des jeweiligen Aufrufers gespawnt. Möchte man mehrere Kisten spawnen, sollte man immer zur Seite gehen nach jeder Kiste, damit diese nicht ineinander spawnen und durch die Gegend fliegen. Die Kisten selbst sind so eingstellt, dass sie keinen Schaden nehmen können und somit auch nicht explodieren. Interessanter Fakt ist auch, dass wenn man per Zeus eine Einheit fernsteuert und den Logistik Dialog bedient, die Kiste nicht bei der ferngesteuerten Einheit, sondern beim Zeus unter den Füßen generiert wird.
+
+Neben den Kisten selbst gibt es noch einige verfügbare Zusatzfunktionen:
+
+|Kürzel|Funktion|
+|---|---|
+|`LOGISTIC_WHEEL`|Spawnt ein ACE Ersatzrad.|
+|`LOGISTIC_TRACK`|Spawnt eine ACE Ersatzkette.|
+|`LOGISTIC_FNC_DELETE`|Entfernt alle Kisten in der Nähe der Fahne.|
