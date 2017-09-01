@@ -182,6 +182,10 @@ this setSpeaker "male06eng";
 ```
 Dabei werden jeweils zeilenweise von oben nach unten die Befehle ausgeführt und die Figur bekommt auf diese Weise ihr Loadout. Nun kann man hingehen und bspw. die Bezeichnung der Uniform rauskopieren: Die Zeile `this forceAddUniform "U_B_CombatUniform_mcam";` sagt aus, dass `this` also der Figur in dem Fall die Uniform `"U_B_CombatUniform_mcam"` zugewiesen werden soll. Möchtet ihr nun eine benutzerdefinierte Fraktion erstellen oder etwas anpassen, kommt ihr auf diese Art und Weise an die Bezeichnungen für die einzelnen Kleidungsteile, Items, Waffen etc.
 
+Die Zuordnung der einzelnen Dateien zu den Fraktionen findet in der Datei `functions\loadout\fn_loadoutVariables.sqf` statt. Die Auswahl der Fraktion findet über Parameter statt, welche man auch in der Datei `mission\CfgParams.hpp` findet und verändern kann. Dabei ist darauf zu achten, dass die Zahlen jeweils zu den Bezeichnungen und zu den Dateien passen.
+
+Als besondere Fraktion ist `Custom` anzusehen, diese ist explizit für Missionsbauer gedacht, die ihr eigenes Loadout für eine Mission erstellen wollen um nicht eine vorhandene Fraktion überschreiben zu müssen. Der Autor übernimmt dabei natürlich die Verwantwortung für die Richtigkeit des Loadouts.
+
 
 ### Spawn Loadout & Rollen
 Das Loadout beim Spawn und die Rollenverteilung wird über die Variable der Spielerfigur geregelt. Das heißt, man stellt einfach einen Rifleman hin, macht ihn playable und gibt ihm als Variablennamen `rif_1` wobei die ersten 3 Buchstaben benutzt werden um die Rolle und damit das Loadout zu bestimmen und die Endung nur dazu dient verschiedene Spieler mit gleichen Rollen zu haben. Demnach steht also `rif` für Rifleman und die `_1` als Endung um ihn von anderen zu unterscheiden, da in ArmA alle Variablen für Objekte unterschiedliche Namen haben müssen. Der nächste würde dann `rif_2` heißen. Ich empfehle grundsätzlich die Endung _<Zahl> da der Editor dann beim Kopieren automatisch hochzählt. Kopiere ich die Spielfigur `rif_2` dann erstellt der Editor die neue Einheit automatisch als `rif_3` und man spart sich Arbeit. Folgende Prefixe sind bei den meisten Fraktionen vordefiniert:
