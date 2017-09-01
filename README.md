@@ -180,6 +180,7 @@ comment "Set identity";
 this setFace "WhiteHead_15";
 this setSpeaker "male06eng";
 ```
+Dabei werden jeweils zeilenweise von oben nach unten die Befehle ausgeführt und die Figur bekommt auf diese Weise ihr Loadout. Nun kann man hingehen und bspw. die Bezeichnung der Uniform rauskopieren: Die Zeile `this forceAddUniform "U_B_CombatUniform_mcam";` sagt aus, dass `this` also der Figur in dem Fall die Uniform `"U_B_CombatUniform_mcam"` zugewiesen werden soll. Möchtet ihr nun eine benutzerdefinierte Fraktion erstellen oder etwas anpassen, kommt ihr auf diese Art und Weise an die Bezeichnungen für die einzelnen Kleidungsteile, Items, Waffen etc.
 
 
 ### Spawn Loadout & Rollen
