@@ -76,37 +76,64 @@ Der `class` Name gibt die Variable für diesen Parameter an, der `title` ist das
 Zum Template gehören vorgefertigte Fraktionen für die Spieler und passende Loadouts für die Rollen. Diese sind in Skripten mit Variablen definiert und können beim Spawn Spielern zugewiesen werden oder später an der Loadout Kiste ingame erneut ausgewählt werden.
 ### Fraktionen
 Zu den unterstützten Fraktionen (auswählbar in den Parametern bzw. `CfgParams.hpp`) gehören:
-+ NATO (minimal)
-+ AAF (minimal)
-+ CSAT (minimal)
-+ U.S. Army - Operational Camouflage Pattern (main)
-+ U.S. Army - Universal Camouflage Pattern (main)
-+ U.S. Army Rangers - Woodland (main)
-+ U.S. Army Rangers - Desert (main)
-+ U.S. Marine Corps - Marine Pattern Desert (main)
-+ U.S. Marine Corps - Marine Pattern Woodland (main)
-+ MARSOC - Marine Corps Forces Special Operations Command (main)
-+ British Armed Forces - Arctic White (main)
-+ British Armed Forces - Arctic Multi-Terrain Pattern (main)
-+ British Armed Forces - Desert (main)
-+ British Armed Forces - Multi-Terrain Pattern (main)
-+ British Armed Forces - Temperate (main)
-+ British Armed Forces - Woodland (main)
-+ Bundeswehr - Flecktarn (main)
-+ Bundeswehr - Tropentarn (main)
-+ Bundeswehr - KSK Fleck (main)
-+ Bundeswehr - KSK Tropen (main)
-+ Black Order (main)
-+ Black Order - Special Forces (main)
-+ Black Order - Early Years (main)
-+ Black Order - Red Berets (main)
-+ Japan - JSDF (main)
-+ Polizei (SEK) Zivil (main)
-+ GSG9 (main)
-+ China - People Liberation Army
-+ China - People Liberation Army (Marine)
-+ Foxhound Siberian Guard
-+ Guerilla (minimal)
+
+*Minimal:*
++ [Minimal] NATO - North Atlantic Treaty Organization
++ [Minimal] AAF  - Altis Armed Forces
++ [Minimal] CSAT - Canton-Protocol Strategic Alliance Treaty
++ [Minimal] FIA  - Freedom and Independence Army
++ [Minimal] CTRG - Combat Technology Research Group
++ [Minimal] Guerilla
+
+*Minimal/APEX:*
++ [Minimal][APEX] NATO Tropical
++ [Minimal][APEX] CTRG Tropical
++ [Minimal][APEX] CSAT Viper
++ [Minimal][APEX] Syndikat (Bandits)
++ [Minimal][APEX] Syndikat (Paramilitary)
++ [Minimal][APEX] Gendamerie
+
+*United States:*
++ [Main] U.S. Army - Operational Camouflage Pattern
++ [Main] U.S. Army - Universal Camouflage Pattern
++ [Main] U.S. Army Rangers - Woodland
++ [Main] U.S. Army Rangers - Desert
++ [Main] U.S. Marine Corps - Marine Pattern Desert
++ [Main] U.S. Marine Corps - Marine Pattern Woodland
++ [Main] U.S. MARSOC - Marine Corps Forces Special Operations Command
+
+*British:*
++ [Main] British Armed Forces - Multi-Terrain Pattern
++ [Main] British Armed Forces - Arctic Multi-Terrain Pattern
++ [Main] British Armed Forces - Arctic White
++ [Main] British Armed Forces - Temperate
++ [Main] British Armed Forces - Woodland		
++ [Main] British Armed Forces - Desert
+
+*Deutschland:*
++ [Main] Bundeswehr - Flecktarn
++ [Main] Bundeswehr - Tropentarn
++ [Main] Bundeswehr - KSK Fleck
++ [Main] Bundeswehr - KSK Tropen
++ [Main] Polizei (SEK) Zivil
++ [Main] GSG9
+
+*Black Order:*
++ [Main] Black Order
++ [Main] Black Order - Special Forces
++ [Main] Black Order - Early Years
++ [Main] Black Order - Red Berets
+
+*Asia:*
++ [Main] Japan - Self-Defense Forces		
++ [Main] China - PLA Woodland
++ [Main] China - PLA Desert
+
+*Middle-East:*
++ [Main] Israel Defense Forces
+
+*Russia:*
++ [Main] Foxhound Siberian Guard
 
 ### Spawn Loadout & Rollen
 Das Loadout beim Spawn und die Rollenverteilung wird über die Variable der Spielerfigur geregelt. Das heißt, man stellt einfach einen Rifleman hin, macht ihn playable und gibt ihm als Variablennamen `rif_1` wobei die ersten 3 Buchstaben benutzt werden um die Rolle und damit das Loadout zu bestimmen und die Endung nur dazu dient verschiedene Spieler mit gleichen Rollen zu haben. Demnach steht also `rif` für Rifleman und die `_1` als Endung um ihn von anderen zu unterscheiden, da in ArmA alle Variablen für Objekte unterschiedliche Namen haben müssen. Der nächste würde dann `rif_2` heißen. Ich empfehle grundsätzlich die Endung _<Zahl> da der Editor dann beim Kopieren automatisch hochzählt. Kopiere ich die Spielfigur `rif_2` dann erstellt der Editor die neue Einheit automatisch als `rif_3` und man spart sich Arbeit. Zur Zeit werden folgende Rollen (Prefixe) erkannt:
