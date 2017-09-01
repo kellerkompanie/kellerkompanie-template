@@ -135,33 +135,84 @@ Zu den unterstützten Fraktionen (auswählbar in den Parametern bzw. `CfgParams.
 *Russia:*
 + [Main] Foxhound Siberian Guard
 
+Die einzelnen Fraktionen sind definiert in den dazugehörigen .sqf Dateien im Ordner `functions\loadout\factions`. Dort werden jeweils die Uniformen, Westen, Helme, Waffen, Items etc. definiert, die zu dieser Fraktion gehören. In ArmA ist es so, dass eine Waffe wie die Vanilla NATO MX als Objekt existiert und mit einem String, der die class beschreibt referenziert werden kann, für die MX ist dies bspw. `"arifle_MX_F"`. Es gibt verschiedene Wege an diese Variablen zu kommen, teilweise gibt es vorgefertigte Listen im Internet (bspw. im Bohemia Wiki), teilweise muss man sie sich selbst zusammensuchen. Am einfachsten geht dies wenn man sich im Virtual Arsenal die Figur passend zurecht stellt und dann über STRG+C oder den Export Button am unteren Bildschirmrand das Loadout exportiert. Dabei wird das Loadout in die Zwischenablage kopiert und man kann es sich dann in einen Texteditor einfügen. Das Ganze sieht dann bspw. so aus:
+
+```
+comment "Exported from Arsenal by Schwaggot";
+
+comment "Remove existing items";
+removeAllWeapons this;
+removeAllItems this;
+removeAllAssignedItems this;
+removeUniform this;
+removeVest this;
+removeBackpack this;
+removeHeadgear this;
+removeGoggles this;
+
+comment "Add containers";
+this forceAddUniform "U_B_CombatUniform_mcam";
+this addItemToUniform "FirstAidKit";
+for "_i" from 1 to 2 do {this addItemToUniform "30Rnd_65x39_caseless_mag";};
+this addVest "V_PlateCarrier1_rgr";
+for "_i" from 1 to 7 do {this addItemToVest "30Rnd_65x39_caseless_mag";};
+for "_i" from 1 to 2 do {this addItemToVest "16Rnd_9x21_Mag";};
+this addItemToVest "SmokeShell";
+this addItemToVest "SmokeShellGreen";
+for "_i" from 1 to 2 do {this addItemToVest "Chemlight_green";};
+for "_i" from 1 to 2 do {this addItemToVest "HandGrenade";};
+this addHeadgear "H_HelmetB";
+
+comment "Add weapons";
+this addWeapon "arifle_MX_F";
+this addPrimaryWeaponItem "acc_pointer_IR";
+this addPrimaryWeaponItem "optic_Aco";
+this addWeapon "hgun_P07_F";
+
+comment "Add items";
+this linkItem "ItemMap";
+this linkItem "ItemCompass";
+this linkItem "ItemWatch";
+this linkItem "ItemRadio";
+this linkItem "NVGoggles";
+
+comment "Set identity";
+this setFace "WhiteHead_15";
+this setSpeaker "male06eng";
+```
+
+
 ### Spawn Loadout & Rollen
-Das Loadout beim Spawn und die Rollenverteilung wird über die Variable der Spielerfigur geregelt. Das heißt, man stellt einfach einen Rifleman hin, macht ihn playable und gibt ihm als Variablennamen `rif_1` wobei die ersten 3 Buchstaben benutzt werden um die Rolle und damit das Loadout zu bestimmen und die Endung nur dazu dient verschiedene Spieler mit gleichen Rollen zu haben. Demnach steht also `rif` für Rifleman und die `_1` als Endung um ihn von anderen zu unterscheiden, da in ArmA alle Variablen für Objekte unterschiedliche Namen haben müssen. Der nächste würde dann `rif_2` heißen. Ich empfehle grundsätzlich die Endung _<Zahl> da der Editor dann beim Kopieren automatisch hochzählt. Kopiere ich die Spielfigur `rif_2` dann erstellt der Editor die neue Einheit automatisch als `rif_3` und man spart sich Arbeit. Zur Zeit werden folgende Rollen (Prefixe) erkannt:
+Das Loadout beim Spawn und die Rollenverteilung wird über die Variable der Spielerfigur geregelt. Das heißt, man stellt einfach einen Rifleman hin, macht ihn playable und gibt ihm als Variablennamen `rif_1` wobei die ersten 3 Buchstaben benutzt werden um die Rolle und damit das Loadout zu bestimmen und die Endung nur dazu dient verschiedene Spieler mit gleichen Rollen zu haben. Demnach steht also `rif` für Rifleman und die `_1` als Endung um ihn von anderen zu unterscheiden, da in ArmA alle Variablen für Objekte unterschiedliche Namen haben müssen. Der nächste würde dann `rif_2` heißen. Ich empfehle grundsätzlich die Endung _<Zahl> da der Editor dann beim Kopieren automatisch hochzählt. Kopiere ich die Spielfigur `rif_2` dann erstellt der Editor die neue Einheit automatisch als `rif_3` und man spart sich Arbeit. Folgende Prefixe sind bei den meisten Fraktionen vordefiniert:
 
 |Prefix|Rolle|
 |---|---|
-|`cmd`|Zeus|
-|`lea`|Lead|
-|`ser`|Sergeant|
-|`med`|Medic (Doctor)|
-|`ftl`|Fire Team Leader|
-|`sql`|Squad Leader|
-|`rif`|Rifleman|
-|`rat`|Rifleman AT|
-|`gre`|Grenadier|
-|`mar`|Marksman|
-|`lmg`|Light Machine Gunner|
-|`las`|Light Machine Gunner Asst.|
-|`mmg`|Medium Machine Gunner|
-|`mas`|Medium Machine Gunner|
-|`sat`|AT Specialist|
-|`aat`|AT Specialist Asst.|
-|`saa`|AA Specialist|
-|`aaa`|AA Specialist Asst.|
-|`eod`|Explosive Ordanance Disposal|
-|`eng`|Engineer|
-|`pil`|Pilot|
-|`uav`|UAV Operator|
-|`jtc`|JTAC|
-|`sni`|Sniper|
-|`spo`|Spotter|
+|`CMD`|Zeus|
+|`LEA`|Lead|
+|`SER`|Sergeant|
+|`DOC`|Doctor|
+|`SQL`|Squad Leader|
+|`FTL`|Fire Team Leader|
+|`MED`|Medic|
+|`RIF`|Rifleman|
+|`RAT`|Rifleman AT|
+|`GRE`|Grenadier|
+|`MAR`|Marksman|
+|`LMG`|Light Machine Gunner|
+|`LAS`|Light Machine Gunner Asst.|
+|`MMG`|Medium Machine Gunner|
+|`MAS`|Medium Machine Gunner|
+|`SAT`|AT Specialist|
+|`AAT`|AT Specialist Asst.|
+|`SAA`|AA Specialist|
+|`AAA`|AA Specialist Asst.|
+|`EOD`|Explosive Ordanance Disposal|
+|`ENG`|Engineer|
+|`PIL`|Pilot|
+|`UAV`|UAV Operator|
+|`JTC`|JTAC|
+|`SNI`|Sniper|
+|`SPO`|Spotter|
+
+Die Rollen werden definiert über das Array `keko_loadout_list`, welches Tupel enthält aus Name der Rolle (wie sie im Loadout Dialog vorkommt) und dem Kürzel (bspw. "RIF").
+
