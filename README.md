@@ -42,8 +42,8 @@ Die Mission selbst (platzierte Gegenstände auf der Karte etc.) wird abgespeiche
 
 ## Parameter
 Die Einstellungen der einzelnen Module (ACE etc.) sind von Haus aus so eingestellt, dass sie dem Standard entsprechen. Nichtsdestotrotz kann man verschiedene Parameter einstellen. Dies mach man, indem man auf dem Server die Mission lädt und im Slotting Screen oben rechts auf Parameter geht. Dort kann man dann die Werte je nach Mission anpassen.
-![](https://github.com/Schwaggot/kellerkompanie-zeus-template/blob/master/doc/parameter01.jpg?raw=true)
-![](https://github.com/Schwaggot/kellerkompanie-zeus-template/blob/master/doc/parameter02.jpg?raw=true)
+![](https://github.com/Schwaggot/kellerkompanie-template/blob/master/doc/parameter01.jpg?raw=true)
+![](https://github.com/Schwaggot/kellerkompanie-template/blob/master/doc/parameter02.jpg?raw=true)
 
 ## Parameter Voreinstellung
 Die Parameter Auswahl bei Missionbeginn ergibt am meisten Sinn bei spontanen Zeus Missionen. Bei vorgefertigten Missionen bietet es sich eher an die Standardeinstellung zu überschreiben. Dazu befinden sich im Ordner `mission` entsprechende `.hpp` Dateien, die die Parameter definieren:
