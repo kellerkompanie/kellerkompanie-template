@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=370;
+		nextID=373;
 	};
 	class Camera
 	{
-		pos[]={4315.6504,27.921261,2107.583};
-		dir[]={-0.78608578,-0.40101078,-0.47066519};
-		up[]={-0.3441025,0.91606677,-0.20603429};
-		aside[]={-0.51375538,3.5297126e-007,0.85805523};
+		pos[]={4270.7871,32.96912,2076.4695};
+		dir[]={0.6373021,-0.77068591,0.012292464};
+		up[]={0.77052981,0.63726056,0.014865668};
+		aside[]={0.019285338,1.3771332e-006,-0.99991506};
 	};
 };
 binarizationWanted=0;
@@ -18284,52 +18284,73 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4292.0273,8.9768047,2073.6399};
-				angles[]={0,1.5738596,0};
+				position[]={4292.0269,8.9768047,2073.6399};
+				angles[]={0,1.5738682,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
-				name="logistics_flag";
+				init="call{[this] call keko_fnc_initLogisticsObject;}";
 			};
 			id=207;
 			type="FlagPole_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item31
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4286.8818,5.0000153,2074.1433};
-				angles[]={0,2.3592577,0};
+				position[]={4287.4863,5,2073.8091};
+				angles[]={0,2.359266,0};
 			};
 			side="Empty";
 			class Attributes
 			{
-				name="respawn_helper";
+				init="call{[this] call keko_fnc_initRespawnObject;}";
 			};
 			id=208;
 			type="Land_HelipadEmpty_F";
-			atlOffset=1.5258789e-005;
 		};
 		class Item32
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4289.9985,5.8915377,2073.7063};
-				angles[]={0,1.5482029,0};
+				position[]={4290,5.8924227,2073.7061};
+				angles[]={0,1.5481943,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				name="gear_crate";
+				init="call{[this] call keko_fnc_initLoadoutObject;}";
 			};
 			id=209;
 			type="B_supplyCrate_F";
-			atlOffset=-0.00088500977;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18353,6 +18374,25 @@ class Mission
 				};
 				class Attribute1
 				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute2
+				{
 					property="ammoBox";
 					expression="[_this,_value] call bis_fnc_initAmmoBox;";
 					class Value
@@ -18366,11 +18406,11 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
 						};
 					};
 				};
-				class Attribute2
+				class Attribute3
 				{
 					property="ace_isMedicalFacility";
 					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
@@ -18389,7 +18429,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=3;
+				nAttributes=4;
 			};
 		};
 		class Item33

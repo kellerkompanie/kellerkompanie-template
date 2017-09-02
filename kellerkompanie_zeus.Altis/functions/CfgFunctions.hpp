@@ -11,6 +11,7 @@ class keko
 	class logistics
 	{
 		class fillCrate {};
+		class initLogisticsObject {};
 	};
 	class logistics_internal
 	{
@@ -25,6 +26,7 @@ class keko
 		class giveLoadout {};
 		class loadoutVariables {};
 		class replaceKeyword {};
+		class initLoadoutObject {};
 	};
 	class loadout_internal
 	{
@@ -37,6 +39,7 @@ class keko
 		class createZeus {};
 		class clearCargo {};
 		class crate {};
+		class initRespawnObject {};
 	};
 	class tfar
 	{

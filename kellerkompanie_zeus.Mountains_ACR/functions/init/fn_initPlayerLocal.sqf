@@ -71,7 +71,7 @@ waitUntil {missionNamespace getVariable "bis_fnc_init"};
 waitUntil {time > 0};
 
 //logistics menu:
-logistics_flag addAction [("<t color='#33FFFF' size='2' align='center'>" + ("Logistik-Menü") + "</t>"), {createDialog "keko_logistic_mainDialog";}];
+//logistics_flag addAction [("<t color='#33FFFF' size='2' align='center'>" + ("Logistik-Menü") + "</t>"), {createDialog "keko_logistic_mainDialog";}];
 
 //gearsaving menu:
 //ADV_objects_clearCargo call adv_fnc_gearsaving;
@@ -79,7 +79,7 @@ logistics_flag addAction [("<t color='#33FFFF' size='2' align='center'>" + ("Log
 
 //adds loadout menu to BriefingBoards:
 
-gear_crate addAction [("<t color='#00FF00' size='2' align='center'>" + ("Loadout-Menü") + "</t>"), {createDialog "keko_loadouts_mainDialog";}];
+//gear_crate addAction [("<t color='#00FF00' size='2' align='center'>" + ("Loadout-Menü") + "</t>"), {createDialog "keko_loadouts_mainDialog";}];
 
 //handling of respawned players:
 /*call {

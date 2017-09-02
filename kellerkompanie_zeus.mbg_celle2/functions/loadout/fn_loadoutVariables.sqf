@@ -147,20 +147,20 @@ keko_logistic_crate_mg_content = [
 		[10, "#PRIMARY_MAG_LMG", "AMMO"],
 		[10, "#PRIMARY_MAG_MMG", "AMMO"],
 		[1, "#BACKPACK_AUTORIFLE", "ITEM"],
-		[2, "ACE_SpareBarrel"]
+		[2, "ACE_SpareBarrel", "AMMO"]
 	];
 
 keko_logistic_crate_at = [
 		[1, "#SAT_LAUNCHER", "WEAPON"],
-		[4, "#AT_MAG", "AMMO"],
-		[1, "#BACKPACK_SPECIALIST", "ITEM"],
-		[4, "#RAT_LAUNCHER", "WEAPON"]
+		[3, "#AT_MAG", "AMMO"],
+		[1, "#BACKPACK_SPECIALIST", "BACKPACK"],
+		[2, "#RAT_LAUNCHER", "WEAPON"]
 	];
 
 keko_logistic_crate_aa = [
 		[1, "#SAA_LAUNCHER", "WEAPON"],
-		[4, "#AA_MAG", "AMMO"],
-		[1, "#BACKPACK_SPECIALIST", "ITEM"]
+		[3, "#AA_MAG", "AMMO"],
+		[1, "#BACKPACK_SPECIALIST", "BACKPACK"]
 	];
 
 keko_logistic_crate_medic_content = [
@@ -202,9 +202,9 @@ keko_logistic_crate_support_content = [
 		[2, "ACE_SpraypaintGreen", "ITEM"],
 
 		[1, "ACE_rangecard", "ITEM"],
-		[30, "ACE_sandbag", "ITEM"],
+		[10, "ACE_sandbag", "ITEM"],
 		
-		[4, "ACE_MapTools", "ITEM"],
+		[2, "ACE_MapTools", "ITEM"],
 		[10, "ACE_CableTie", "ITEM"],
 
 		[2, "ACE_UAVBattery", "ITEM"],
@@ -228,12 +228,12 @@ keko_logistic_crate_eod_content = [
 		
 		[1, "MineDetector", "ITEM"],
 		
-		[2, "ToolKit", "ITEM"],
+		[1, "ToolKit", "ITEM"],
 
-		[2, "ACE_VMH3", "WEAPON"],
-		[2, "ACE_VMM3", "WEAPON"],
+		[1, "ACE_VMH3", "WEAPON"],
+		[1, "ACE_VMM3", "WEAPON"],
 
-		[4, "ATMine_Range_Mag", "ITEM"],
+		[3, "ATMine_Range_Mag", "ITEM"],
 		[4, "APERSTripMine_Wire_Mag", "ITEM"],
 		[4, "ClaymoreDirectionalMine_Remote_Mag", "ITEM"],
 		[4, "SatchelCharge_Remote_Mag", "ITEM"],

@@ -31,6 +31,41 @@ _box = true;
 //empty option was chosen inside dialog
 if (_crateSelection isEqualTo "LOGISTIC_FNC_NIL") exitWith { ["Keine Aktion ausgewählt",5] call keko_fnc_timedHint; _box = false; };
 
+if (_crateSelection isEqualTo "LOGISTIC_WHEEL") then {
+	if (isClass(configFile >> "CfgPatches" >> "ace_repair")) then {
+		_box = createVehicle ["ACE_Wheel",_position,[],0,"CAN_COLLIDE"];
+		_box setPosASL _position;
+	};
+	if (true) exitWith {false};
+}; 
+
+if (_crateSelection isEqualTo "LOGISTIC_TRACK") then {
+	if (isClass(configFile >> "CfgPatches" >> "ace_repair")) then {
+		_box = createVehicle ["ACE_Track",_position,[],0,"CAN_COLLIDE"];
+		_box setPosASL _position;
+	};
+	if (true) exitWith {false}
+};
+
+if (_crateSelection isEqualTo "LOGISTIC_FNC_DELETE") then {
+	{
+		_deleteable = _x getVariable "keko_logistic_delete";
+		if(isNil "_deleteable") then {
+			deleteVehicle _x;
+		}
+		else {
+			if(_deleteable) then {
+				deleteVehicle _x;
+			};
+		};		
+	} count (nearestObjects [player, ["ReammoBox_F"], 3, true]);
+	if (isClass(configFile >> "CfgPatches" >> "ace_repair")) then {
+		{deleteVehicle _x} count (nearestObjects [player, ["ACE_Wheel"], 3, true]);
+		{deleteVehicle _x} count (nearestObjects [player, ["ACE_Track"], 3, true]);
+	};
+	if (true) exitWith {false}
+}; 
+
 
 // Aufruf des ausgewählten Loadouts -> Übergabe aus Dialog
 _functionForAll = {

@@ -24,6 +24,7 @@ _crate allowDamage false;
 {
 	_amount = _x select 0;
 	_item = _x select 1;
+	_item = [_item] call keko_fnc_replaceKeyword;
 	_item_type = _x select 2;
 
 	switch ( _item_type ) do {
@@ -35,6 +36,9 @@ _crate allowDamage false;
 		};
 		case "AMMO": {
 			_crate addMagazineCargoGlobal [_item, _amount];
+		};
+		case "BACKPACK": {
+			_crate addBackpackCargoGlobal [_item, _amount];
 		};
 	};
 	

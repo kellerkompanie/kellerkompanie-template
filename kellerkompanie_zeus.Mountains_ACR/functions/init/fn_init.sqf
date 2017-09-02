@@ -50,9 +50,7 @@ if !( (missionNamespace getVariable ["keko_par_weather",99]) isEqualTo 99 ) then
 	enableEngineArtillery false;
 };*/
 
-if(!("respawn" in allMapMarkers)) then {
-	createMarker ["respawn", position respawn_helper];
-};
+
 
 //_spawn_height = (getPosASL respawn_helper) select 2;
 //"respawn" setMarkerPosLocal [markerPos "respawn" select 0, markerPos "respawn" select 1, _spawn_height];
