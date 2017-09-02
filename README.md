@@ -75,6 +75,28 @@ class param_give_gps
 ```
 Der `class` Name gibt die Variable für diesen Parameter an, der `title` ist das was man nachher im Menü sieht und die `values` und `texts` sind die Auswahlmöglichkeiten, wobei beide Arrays sortiert sind (0=No,1=GPS,2=GPS and MicroDAGR,3=MicroDAGR,4=cTab"). Die Zeile `default = 4;`gibt an, dass wenn man nichts einstellt, standardmäßig die Option 4, also cTab ausgewählt wird. Wollt ihr in eurer Mission hingegen, dass die Leute mit GPS starten, so öffnet ihr die `CfgParams.hpp` mit einem Texteditor, ändert ihr die Zeile in `default = 1;` und speichert die Datei ab. Das könnt ihr mit allen Werten machen, die ihr für eure Mission individuell anpassen wollt. Analog funktioniert auch die `CfgACEParams.hpp`.
 
+## Missionsobjekte
+In den Templates sind neben den Spielereinheiten auch einige Objekte vorplatziert, die eine besondere Funktion haben und grundsätzlich nicht entfernt werden sollten. Die Objekte sind so eingestellt, dass sie keinen Schaden nehmen.
+![](https://github.com/Schwaggot/kellerkompanie-template/blob/master/doc/missionobjects01.jpg?raw=true)
+#### Loadout Crate
+Die Loadout Crate wird mit dem Loadout Dialog initialisiert. Das heißt Spieler haben die Möglichkeit dort über das Mausradmenü in den Loadout Dialog zu kommen.
+#### Logistics Flag
+Ähnlich der Loadout Crate wird an diesem Objekt der Logistik Dialog verfügbar sein, über den man Kisten spawnen kann.
+#### Respawn Helper
+Sollte bisher kein Map Marker namens `respawn` gesetzt worden sein, wird an der Stelle dieses Objektes ein unsichtbarer Marker gesetzt und dadurch respawnt man an dieser Stelle.
+#### Benutzerdefinierte Objekte
+Wer seine eigenen Helper Objekte erstellen will, z.B. um an 2 verschiedenen Orten Loadoutkisten zu haben, der kann beliebige Objekte mit folgenden Scripten in der Init Zeile der Objekte erweitern, potentiell gehen auch mehrere Scripte auf demselben Objekt:
+
+*Loadout Crate:*
+`[this] call keko_fnc_initLoadoutObject;`
+
+*Logistics Flag:*
+`[this] call keko_fnc_initLogisticsObject;`
+
+*Respawn Helper:*
+`[this] call keko_fnc_initRespawnObject;`
+
+
 ## Rollen & Fraktionen
 Zum Template gehören vorgefertigte Fraktionen für die Spieler und passende Loadouts für die Rollen. Diese sind in Skripten mit Variablen definiert und können beim Spawn Spielern zugewiesen werden oder später an der Loadout Kiste ingame erneut ausgewählt werden.
 ### Fraktionen
