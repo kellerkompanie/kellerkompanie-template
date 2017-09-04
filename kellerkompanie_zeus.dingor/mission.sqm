@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=217;
+		nextID=230;
 	};
 	class Camera
 	{
-		pos[]={4037.0811,42.377403,1660.3929};
-		dir[]={-0.52316105,-0.85051978,-0.054357991};
-		up[]={-0.84596473,0.52594453,-0.087898612};
-		aside[]={-0.10334948,-6.6295615e-007,0.99466389};
+		pos[]={4002.3562,52.315708,1643.3704};
+		dir[]={0.75436658,-0.54902214,0.35987818};
+		up[]={0.495525,0.83580709,0.23639552};
+		aside[]={0.43057472,1.9860454e-007,-0.90255839};
 	};
 };
 binarizationWanted=0;
@@ -596,16 +596,16 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4032.7073,23.641438,1627.1097};
+						position[]={4032.7002,23.641438,1627.1619};
 						angles[]={0,4.6795592,0};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
-						rank="CORPORAL";
-						name="jtc_b_1";
-						description="Platoon JTAC";
+						rank="SERGEANT";
+						name="doc_b_1";
+						description="Platoon Medic";
 						isPlayable=1;
 						class Inventory
 						{
@@ -620,8 +620,8 @@ class Mission
 							gps="ItemGPS";
 						};
 					};
-					id=3;
-					type="B_Soldier_SL_F";
+					id=5;
+					type="B_medic_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -696,7 +696,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.99000001;
+									value=0.98000002;
 								};
 							};
 						};
@@ -715,7 +715,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -815,16 +815,16 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4032.6436,23.641438,1629.1042};
-						angles[]={0,4.6795592,0};
+						position[]={4032.6111,23.641438,1629.2426};
+						angles[]={0,4.678442,0};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
-						rank="CORPORAL";
-						name="uav_b_1";
-						description="Platoon UAV Operator";
+						rank="SERGEANT";
+						name="ser_b_2";
+						description="Platoon Assistant";
 						isPlayable=1;
 						class Inventory
 						{
@@ -839,8 +839,8 @@ class Mission
 							gps="ItemGPS";
 						};
 					};
-					id=4;
-					type="B_soldier_UAV_F";
+					id=218;
+					type="B_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -915,7 +915,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.94999999;
+									value=0.95999998;
 								};
 							};
 						};
@@ -1034,16 +1034,16 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4032.5791,23.641438,1631.1036};
-						angles[]={0,4.6795592,0};
+						position[]={4032.5815,23.641438,1631.2488};
+						angles[]={0,4.678442,0};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						rank="SERGEANT";
-						name="med_b_1";
-						description="Platoon Medic";
+						name="ser_b_3";
+						description="Platoon Assistant";
 						isPlayable=1;
 						class Inventory
 						{
@@ -1058,8 +1058,8 @@ class Mission
 							gps="ItemGPS";
 						};
 					};
-					id=5;
-					type="B_medic_F";
+					id=220;
+					type="B_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1134,7 +1134,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.98000002;
+									value=0.95999998;
 								};
 							};
 						};
@@ -1153,7 +1153,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male06ENG";
+									value="Male07ENG";
 								};
 							};
 						};
@@ -10698,16 +10698,16 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4032.0164,23.641438,1650.2975};
+						position[]={4032.0479,23.641438,1650.1831};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
-						rank="CORPORAL";
-						name="jtc_i_1";
-						description="Platoon JTAC";
+						rank="SERGEANT";
+						name="doc_i_1";
+						description="Platoon Medic";
 						isPlayable=1;
 						class Inventory
 						{
@@ -10722,8 +10722,8 @@ class Mission
 							gps="ItemGPS";
 						};
 					};
-					id=53;
-					type="I_Soldier_SL_F";
+					id=55;
+					type="I_medic_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -10798,7 +10798,226 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=1.04;
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03GRE";
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="Enh_ambientAnimParams";
+							expression="	if (is3DEN) then {_this call BIS_fnc_ambientAnim__terminate};	[_this,_value] spawn	{		sleep 0.1;		private _unit = _this select 0;		private _value = _this select 1;		if (!(_value select 0 == '') && !isMultiplayer) then		{			[_unit,_value select 0,_value select 1,objNull,false,false] call BIS_fnc_ambientAnim;		};	}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"ARRAY"
+										};
+									};
+									class value
+									{
+										items=2;
+										class Item0
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="";
+											};
+										};
+										class Item1
+										{
+											class data
+											{
+												class type
+												{
+													type[]=
+													{
+														"STRING"
+													};
+												};
+												value="ASIS";
+											};
+										};
+									};
+								};
+							};
+						};
+						class Attribute7
+						{
+							property="Enh_featureType";
+							expression="_this setFeatureType (parseNumber _value)";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="0";
+								};
+							};
+						};
+						nAttributes=8;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4032.0977,23.641438,1652.3279};
+						angles[]={0,4.7212377,0};
+					};
+					side="Independent";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						name="ser_i_2";
+						description="Platoon Assistant";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_I_CombatUniform";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="ItemGPS";
+						};
+					};
+					id=222;
+					type="I_soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="Enh_onDamagedEvent";
+							expression="if !(_value == 'false') then {_this addEventHandler ['dammaged',_value]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="false";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="Enh_onRespawnEvent";
+							expression="if !(_value == 'false') then {_this addEventHandler ['respawn',_value]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="false";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="Enh_onKilledEvent";
+							expression="if !(_value == 'false') then {_this addEventHandler ['killed',_value]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="false";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
 								};
 							};
 						};
@@ -10912,240 +11131,21 @@ class Mission
 						nAttributes=8;
 					};
 				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4032.0349,23.641438,1652.2965};
-						angles[]={0,4.7212377,0};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						name="uav_i_1";
-						description="Platoon UAV Operator";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="U_I_CombatUniform";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							gps="ItemGPS";
-						};
-					};
-					id=54;
-					type="I_soldier_UAV_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="Enh_onDamagedEvent";
-							expression="if !(_value == 'false') then {_this addEventHandler ['dammaged',_value]}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="false";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="Enh_onRespawnEvent";
-							expression="if !(_value == 'false') then {_this addEventHandler ['respawn',_value]}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="false";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="Enh_onKilledEvent";
-							expression="if !(_value == 'false') then {_this addEventHandler ['killed',_value]}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="false";
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.98000002;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male02GRE";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="Enh_ambientAnimParams";
-							expression="	if (is3DEN) then {_this call BIS_fnc_ambientAnim__terminate};	[_this,_value] spawn	{		sleep 0.1;		private _unit = _this select 0;		private _value = _this select 1;		if (!(_value select 0 == '') && !isMultiplayer) then		{			[_unit,_value select 0,_value select 1,objNull,false,false] call BIS_fnc_ambientAnim;		};	}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"ARRAY"
-										};
-									};
-									class value
-									{
-										items=2;
-										class Item0
-										{
-											class data
-											{
-												class type
-												{
-													type[]=
-													{
-														"STRING"
-													};
-												};
-												value="";
-											};
-										};
-										class Item1
-										{
-											class data
-											{
-												class type
-												{
-													type[]=
-													{
-														"STRING"
-													};
-												};
-												value="ASIS";
-											};
-										};
-									};
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="Enh_featureType";
-							expression="_this setFeatureType (parseNumber _value)";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="0";
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4032.052,23.641438,1654.2969};
+						position[]={4032.1482,23.641438,1654.3555};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						rank="SERGEANT";
-						name="med_i_1";
-						description="Platoon Medic";
+						name="ser_i_3";
+						description="Platoon Assistant";
 						isPlayable=1;
 						class Inventory
 						{
@@ -11160,8 +11160,8 @@ class Mission
 							gps="ItemGPS";
 						};
 					};
-					id=55;
-					type="I_medic_F";
+					id=224;
+					type="I_soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11236,7 +11236,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=0.95999998;
 								};
 							};
 						};
@@ -11255,7 +11255,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male03GRE";
+									value="Male05GRE";
 								};
 							};
 						};
@@ -12285,7 +12285,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4044.241,23.641438,1646.0603};
+						position[]={4044.241,23.641438,1646.0601};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
@@ -12293,7 +12293,7 @@ class Mission
 					class Attributes
 					{
 						name="las_i_1";
-						description="Alpha 1 - Soldier";
+						description="Alpha 1 - LMG Asst.";
 						isPlayable=1;
 						class Inventory
 						{
@@ -12503,7 +12503,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4047.2412,23.641438,1646.035};
+						position[]={4047.241,23.641438,1646.035};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
@@ -12511,7 +12511,7 @@ class Mission
 					class Attributes
 					{
 						name="rif_i_1";
-						description="Alpha 1 - Soldier";
+						description="Alpha 1 - Rifleman";
 						isPlayable=1;
 						class Inventory
 						{
@@ -13158,7 +13158,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4044.2588,23.641438,1648.0614};
+						position[]={4044.259,23.641438,1648.061};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
@@ -13166,7 +13166,7 @@ class Mission
 					class Attributes
 					{
 						name="las_i_2";
-						description="Alpha 2 - Soldier";
+						description="Alpha 2 - LMG Asst.";
 						isPlayable=1;
 						class Inventory
 						{
@@ -13376,7 +13376,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4047.259,23.641438,1648.0333};
+						position[]={4047.259,23.641438,1648.0331};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
@@ -13384,7 +13384,7 @@ class Mission
 					class Attributes
 					{
 						name="rif_i_2";
-						description="Alpha 2 - Soldier";
+						description="Alpha 2 - Rifleman";
 						isPlayable=1;
 						class Inventory
 						{
@@ -14524,7 +14524,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4044.2256,23.641438,1650.2678};
+						position[]={4044.2261,23.641438,1650.2681};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
@@ -14532,7 +14532,7 @@ class Mission
 					class Attributes
 					{
 						name="las_i_3";
-						description="Bravo 1 - Soldier";
+						description="Bravo 1 - LMG Asst.";
 						isPlayable=1;
 						class Inventory
 						{
@@ -14742,7 +14742,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4047.2266,23.641438,1650.2405};
+						position[]={4047.2271,23.641438,1650.24};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
@@ -14750,7 +14750,7 @@ class Mission
 					class Attributes
 					{
 						name="rif_i_3";
-						description="Bravo 1 - Soldier";
+						description="Bravo 1 - Rifleman";
 						isPlayable=1;
 						class Inventory
 						{
@@ -15397,7 +15397,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4044.2449,23.641438,1652.2676};
+						position[]={4044.2451,23.641438,1652.2681};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
@@ -15405,7 +15405,7 @@ class Mission
 					class Attributes
 					{
 						name="las_i_4";
-						description="Bravo 2 - Soldier";
+						description="Bravo 2 - LMG Asst.";
 						isPlayable=1;
 						class Inventory
 						{
@@ -15615,7 +15615,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4047.2437,23.641438,1652.2408};
+						position[]={4047.2439,23.641438,1652.2411};
 						angles[]={0,4.7212377,0};
 					};
 					side="Independent";
@@ -15623,7 +15623,7 @@ class Mission
 					class Attributes
 					{
 						name="rif_i_4";
-						description="Bravo 2 - Soldier";
+						description="Bravo 2 - Rifleman";
 						isPlayable=1;
 						class Inventory
 						{
@@ -20818,16 +20818,16 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4032.4912,23.641438,1672.834};
+						position[]={4032.4741,23.641438,1672.7905};
 						angles[]={0,4.7038717,0};
 					};
 					side="East";
 					flags=5;
 					class Attributes
 					{
-						rank="CORPORAL";
-						name="jtc_o_1";
-						description="Platoon JTAC";
+						rank="SERGEANT";
+						name="doc_o_1";
+						description="Platoon Medic";
 						isPlayable=1;
 						class Inventory
 						{
@@ -20842,8 +20842,8 @@ class Mission
 							gps="ItemGPS";
 						};
 					};
-					id=104;
-					type="O_Soldier_SL_F";
+					id=106;
+					type="O_medic_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -20918,7 +20918,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=1;
+									value=0.97000003;
 								};
 							};
 						};
@@ -20937,7 +20937,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male02PER";
+									value="Male01PER";
 								};
 							};
 						};
@@ -21037,16 +21037,16 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4032.4736,23.641438,1674.8333};
+						position[]={4032.4624,23.641438,1674.7772};
 						angles[]={0,4.7038717,0};
 					};
 					side="East";
 					flags=5;
 					class Attributes
 					{
-						rank="CORPORAL";
-						name="uav_o_1";
-						description="UAV Operator";
+						rank="SERGEANT";
+						name="ser_o_2";
+						description="Platoon Assistant";
 						isPlayable=1;
 						class Inventory
 						{
@@ -21061,8 +21061,8 @@ class Mission
 							gps="ItemGPS";
 						};
 					};
-					id=105;
-					type="O_soldier_UAV_F";
+					id=226;
+					type="O_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21137,7 +21137,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=1.05;
+									value=1.04;
 								};
 							};
 						};
@@ -21156,7 +21156,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male03PER";
+									value="Male01PER";
 								};
 							};
 						};
@@ -21256,7 +21256,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4032.4556,23.641438,1676.8345};
+						position[]={4032.4741,23.641438,1676.7529};
 						angles[]={0,4.7038717,0};
 					};
 					side="East";
@@ -21264,8 +21264,8 @@ class Mission
 					class Attributes
 					{
 						rank="SERGEANT";
-						name="med_o_1";
-						description="Platoon Medic";
+						name="ser_o_3";
+						description="Platoon Assistant";
 						isPlayable=1;
 						class Inventory
 						{
@@ -21280,8 +21280,8 @@ class Mission
 							gps="ItemGPS";
 						};
 					};
-					id=106;
-					type="O_medic_F";
+					id=228;
+					type="O_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21356,7 +21356,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.04;
 								};
 							};
 						};
@@ -40696,7 +40696,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4027.5393,23.639999,1659.1073};
-				angles[]={-0,5.4987998,0};
+				angles[]={0,5.4987998,0};
 			};
 			side="Empty";
 			class Attributes
@@ -40712,7 +40712,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4025.0254,24.532421,1659.2052};
-				angles[]={-0,4.6877279,0};
+				angles[]={0,4.6877279,0};
 			};
 			side="Empty";
 			flags=4;

@@ -662,7 +662,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14606.275,17.911438,16745.809};
-						angles[]={-0,5.4597735,0};
+						angles[]={0,5.4597735,0};
 					};
 					side="West";
 					flags=4;
@@ -881,7 +881,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14607.634,17.911438,16747.279};
-						angles[]={-0,5.4597735,0};
+						angles[]={0,5.4597735,0};
 					};
 					side="West";
 					flags=4;
