@@ -1,6 +1,9 @@
 
 _key = missionNamespace getVariable ["keko_persistency_key", "PLACE_YOUR_KEY_HERE"];
+_param_persistent_loadout = "param_persistent_loadout" call BIS_fnc_getParamValue;
 _version = 1;
+
+if(_param_persistent_loadout == 0) exitWith { ["Nicht verfügbar. Persistent Saving ist deaktiviert.",5] call keko_fnc_timedHint; false; };
 
 if(_key isEqualTo "PLACE_YOUR_KEY_HERE") exitWith {	["Nicht verfügbar. Kein Key gesetzt!",5] call keko_fnc_timedHint; false; };
 
