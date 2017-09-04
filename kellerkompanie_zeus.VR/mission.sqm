@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4238.7632,30.803135,2126.2129};
-		dir[]={0.61143643,-0.5131765,-0.60233766};
-		up[]={0.36563304,0.85823947,-0.36019182};
-		aside[]={-0.70179296,1.185108e-007,-0.7123943};
+		pos[]={4235.2021,38.817696,2133.291};
+		dir[]={0.56743503,-0.55050224,-0.61235821};
+		up[]={0.37421981,0.83478743,-0.403846};
+		aside[]={-0.73350734,1.6670674e-007,-0.67969751};
 	};
 };
 binarizationWanted=0;
@@ -2890,7 +2890,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call keko_fnc_initLoadoutObject;}";
+				init="call{[this] call keko_fnc_initLoadoutObject;" \n "[this] call keko_fnc_initPersistentLoadoutObject;}";
 			};
 			id=209;
 			type="B_supplyCrate_F";
@@ -2981,7 +2981,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4265,5,2112};
-				angles[]={-0,2.3592577,0};
+				angles[]={0,2.3592577,0};
 			};
 			id=210;
 			type="ModuleCurator_F";
@@ -3072,7 +3072,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4272,5,2112};
-				angles[]={-0,2.3592577,0};
+				angles[]={0,2.3592577,0};
 			};
 			name="HC1";
 			isPlayable=1;
@@ -3086,7 +3086,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4270,5,2112};
-				angles[]={-0,2.3592577,0};
+				angles[]={0,2.3592577,0};
 			};
 			name="HC2";
 			isPlayable=1;
@@ -3100,7 +3100,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4268,5,2112};
-				angles[]={-0,2.3592577,0};
+				angles[]={0,2.3592577,0};
 			};
 			name="HC3";
 			isPlayable=1;

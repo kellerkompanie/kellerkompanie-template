@@ -26,13 +26,20 @@ class keko
 		class giveLoadout {};
 		class loadoutVariables {};
 		class replaceKeyword {};
-		class initLoadoutObject {};
+		class initLoadoutObject {};		
 	};
 	class loadout_internal
 	{
 		file = "functions\loadout\internal";
 		class dialogGearInit {};
 		class dialogLoadout {};
+	};
+	class loadout_persistent
+	{
+		file = "functions\loadout\persistent";
+		class initPersistentLoadoutObject {};
+		class saveLoadout {};
+		class loadLoadout {};
 	};
 	class server
 	{

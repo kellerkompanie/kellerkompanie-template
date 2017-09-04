@@ -39,6 +39,19 @@ class param_pre_loadout
 	};
 	default = 1;
 };
+class param_persistent_loadout
+{
+	title="Persistentes Loadout";
+	values[] = {
+		0, // Deaktiviert
+		1  // Aktiviert
+	};
+	texts[] = {
+		"Deaktiviert",
+		"Aktiviert"
+	};
+	default = 1;
+};
 class param_faction
 {
 	title="Player Faction";
