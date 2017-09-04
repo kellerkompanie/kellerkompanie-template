@@ -48,6 +48,7 @@ keko_loadout_attributes = ["new", []] call OO_HASHMAP;
 keko_loadout_linkable_items = ["new", []] call OO_HASHMAP;
 
 
+keko_loadout_ranks = ["new", []] call OO_HASHMAP;
 
 keko_loadout_roles = ["new", []] call OO_HASHMAP;
 
@@ -281,8 +282,13 @@ keko_crate_list = [
 ["put", ["LOGISTIC_CRATE_RATIONS", keko_logistic_crate_rations_content]] call keko_logistic_crates_content;
 
 
-
-
+["put", ["DEFAULT", "PRIVATE"]] call keko_loadout_ranks;
+["put", ["CMD", "COLONEL"]] call keko_loadout_ranks;
+["put", ["LEA", "LIEUTENANT"]] call keko_loadout_ranks;
+["put", ["SER", "SERGEANT"]] call keko_loadout_ranks;
+["put", ["SQL", "SERGEANT"]] call keko_loadout_ranks;
+["put", ["FTL", "CORPORAL"]] call keko_loadout_ranks;
+["put", ["MED", "CORPORAL"]] call keko_loadout_ranks;
 
 
 

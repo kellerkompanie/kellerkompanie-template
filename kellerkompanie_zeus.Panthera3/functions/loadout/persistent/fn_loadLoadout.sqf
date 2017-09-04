@@ -27,10 +27,12 @@ _loadout = _entry select 2;
 _vars = _entry select 3;
 _medicClass = _vars select 0;
 _isEngineer = _vars select 1;
+_rank = _vars select 2;
 
 player setUnitLoadout _loadout;
 player setVariable ["ace_medical_medicClass", _medicClass, true];
 player setVariable ["ACE_isEngineer", _isEngineer, true];
+player setUnitRank _rank;
 
 ["Loadout geladen",5] call keko_fnc_timedHint;
 true;

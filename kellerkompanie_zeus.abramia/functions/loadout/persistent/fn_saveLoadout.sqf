@@ -8,8 +8,9 @@ _loadout = getUnitLoadout player;
 
 _medicClass = player getVariable ["ace_medical_medicClass", 0];
 _isEngineer = player getVariable ["ACE_isEngineer", 0];
+_rank = rank player;
 
-_new_entry = [_key /*KEY*/, 1 /*VERSION*/, _loadout /*LOADOUT*/, [_medicClass /*ace_medical_medicClass*/, _isEngineer /*ACE_isEngineer*/]];
+_new_entry = [_key /*KEY*/, 1 /*VERSION*/, _loadout /*LOADOUT*/, [_medicClass /*ace_medical_medicClass*/, _isEngineer /*ACE_isEngineer*/, _rank]];
 
 _persistent_save = profileNamespace getVariable "keko_persistent_loadout_save";
 if(isNil "_persistent_save") then {

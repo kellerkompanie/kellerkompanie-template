@@ -51,6 +51,8 @@ _attributes = ["get", "DEFAULT"] call keko_loadout_attributes;
 
 _linkable_items = ["get", "DEFAULT"] call keko_loadout_linkable_items;
 
+_rank = ["get", "DEFAULT"] call keko_loadout_ranks;
+
 
 if(["containsKey", _prefix] call keko_loadout_uniform) then {
 	_uniform = ["get", _prefix] call keko_loadout_uniform;
@@ -120,6 +122,9 @@ if(["containsKey", _prefix] call keko_loadout_linkable_items) then {
 	_linkable_items = ["get", _prefix] call keko_loadout_linkable_items;
 };
 
+if(["containsKey", _prefix] call keko_loadout_ranks) then {
+	_rank = ["get", _prefix] call keko_loadout_ranks;
+};
 
 
 if(count _uniform != 0) then {
@@ -356,6 +361,8 @@ if(count _linkable_items != 0) then {
 	} forEach _linkable_items;
 };
 
+
+player setUnitRank _rank;
 
 
 // ----- END Link Items ----- //
