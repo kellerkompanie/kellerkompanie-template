@@ -11,10 +11,8 @@ if(!keko_loadout_variables_set) then {
 	call keko_fnc_loadoutVariables;
 };
 
-player setVariable ["ace_medical_medicClass", 1, false];
-player setVariable ["ace_medical_medicClass", 2, false];
-player setVariable ["ACE_isEngineer", 1, false];
-player setVariable ["ACE_isEngineer", 2, false];
+player setVariable ["ace_medical_medicClass", 0, true];
+player setVariable ["ACE_isEngineer", 0, true];
 
 removeAllWeapons player;
 removeAllItems player;
