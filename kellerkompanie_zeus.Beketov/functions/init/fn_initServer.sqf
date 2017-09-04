@@ -20,6 +20,7 @@ if (!isServer) exitWith {};
 
 //parameters:
 call keko_fnc_parVariables;
+call keko_fnc_persistentSettings;
 //call ADV_fnc_variables;
 call keko_fnc_loadoutVariables;
 call keko_fnc_tfarSettings;

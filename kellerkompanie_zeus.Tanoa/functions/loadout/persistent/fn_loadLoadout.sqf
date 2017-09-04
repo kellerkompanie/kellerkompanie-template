@@ -1,5 +1,7 @@
 
-_key = "DEFAULT_KEY";
+_key = missionNamespace getVariable ["keko_persistency_key", "PLACE_YOUR_KEY_HERE"];
+
+if(_key isEqualTo "PLACE_YOUR_KEY_HERE") exitWith {	["Nicht verfügbar. Kein Key gesetzt!",5] call keko_fnc_timedHint; false; };
 
 _persistent_save = profileNamespace getVariable "keko_persistent_loadout_save";
 if(isNil "_persistent_save") exitWith {	["Kein Speicherstand im Profil",5] call keko_fnc_timedHint; false; };

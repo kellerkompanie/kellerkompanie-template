@@ -40,6 +40,7 @@ class keko
 		class initPersistentLoadoutObject {};
 		class saveLoadout {};
 		class loadLoadout {};
+		class persistentSettings {};
 	};
 	class server
 	{

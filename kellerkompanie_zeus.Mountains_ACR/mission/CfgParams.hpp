@@ -50,7 +50,7 @@ class param_persistent_loadout
 		"Deaktiviert",
 		"Aktiviert"
 	};
-	default = 1;
+	default = 0;
 };
 class param_faction
 {
