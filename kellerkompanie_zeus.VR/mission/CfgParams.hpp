@@ -49,6 +49,7 @@ class param_faction
 		4, // FIA
 		5, // CTRG
 		6, // Guerilla
+		7, // IDAP
 
 		50, // NATO Apex
 		51, // CTRG Apex
@@ -102,6 +103,7 @@ class param_faction
 		"[Minimal] FIA  - Freedom and Independence Army",
 		"[Minimal] CTRG - Combat Technology Research Group",
 		"[Minimal] Guerilla",
+		"[Minimal] IDAP - International Development & Aid Project",
 
 		"[Minimal][APEX] NATO Tropical",
 		"[Minimal][APEX] CTRG Tropical",

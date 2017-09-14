@@ -332,6 +332,12 @@ switch (_param_faction) do {
 		#include "factions\006_guerilla.sqf"
 		
 	};
+	case 7: {
+		// IDAP
+		#include "factions\007_idap.sqf"
+		
+	};
+
 
 
 	/* APEX */

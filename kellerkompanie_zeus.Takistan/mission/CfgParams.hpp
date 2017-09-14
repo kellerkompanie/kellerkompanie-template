@@ -39,19 +39,6 @@ class param_pre_loadout
 	};
 	default = 1;
 };
-class param_persistent_loadout
-{
-	title="Persistentes Loadout";
-	values[] = {
-		0, // Deaktiviert
-		1  // Aktiviert
-	};
-	texts[] = {
-		"Deaktiviert",
-		"Aktiviert"
-	};
-	default = 0;
-};
 class param_faction
 {
 	title="Player Faction";
@@ -62,6 +49,7 @@ class param_faction
 		4, // FIA
 		5, // CTRG
 		6, // Guerilla
+		7, // IDAP
 
 		50, // NATO Apex
 		51, // CTRG Apex
@@ -115,6 +103,7 @@ class param_faction
 		"[Minimal] FIA  - Freedom and Independence Army",
 		"[Minimal] CTRG - Combat Technology Research Group",
 		"[Minimal] Guerilla",
+		"[Minimal] IDAP - International Development & Aid Project",
 
 		"[Minimal][APEX] NATO Tropical",
 		"[Minimal][APEX] CTRG Tropical",
@@ -288,33 +277,6 @@ class param_weather
 	texts[] = {"Keine Veränderung","Sonnig","Klar","Bewölkt","Leichter Regen","Mittlerer Regen","Schwerer Regen","Leichter Nebel","Mittlerer Nebel","Dichter Nebel","Zufälliges Wetter"};
 	default = 99;
 };
-/*class dummy_respawn {
-	title = "---------------------- Respawn ----------------------";
-	values[] = {-99999};
-	default = -99999;
-	texts[] = {""};
-};
-class param_remRespWest
-{
-	title="Respawn-Marker nach 60 secs entfernen?";
-	values[] = {1,0};
-	texts[] = {"Ja","Nein"};
-	default = 0;
-};
-class param_moveMarker
-{
-	title="Wie soll mit respawnenden oder nachzuführenden Spielern umgegangen werden?";
-	values[] = {0,1,2};
-	texts[] = {"Kein Respawn","Fester Respawn","Beweglicher Respawn"};
-	default = 1;
-};
-class param_vehicleRespawn
-{
-	title="Wie hoch soll der Respawn-Timer für Fahrzeuge eingestellt werden?";
-	values[] = {900,600,300,60,30,20,10,9999};
-	texts[] = {"15 Minuten","10 Minuten","5 Minuten","60 Sekunden","30 Sekunden","20 Sekunden","10 Sekunden","Deaktiviert"};
-	default = 300;
-};*/
 class dummy_settings_game {
 	title = "---------------------- Game Settings ----------------------";
 	values[] = {-99999};
@@ -328,32 +290,61 @@ class param_sideRelations
 	texts[] = {"OPFOR + BLUFOR","OPFOR","BLUFOR","keiner"};
 	default = 0;
 };
-/*class param_fatigue
-{
-	title="Ausdauer";
-	values[] = {1,0};
-	texts[] = {"Aktiviert","Deaktiviert"};
-	default = 1;
+
+
+
+class dummy_settings_persistency {
+	title = "---------------------- Persistency Settings ----------------------";
+	values[] = {-99999};
+	default = -99999;
+	texts[] = {""};
 };
-class param_engineArtillery
+class param_persistent_loadout
 {
-	title="Artillerie-Computer";
-	values[] = {1,0};
-	texts[] = {"Deaktiviert","Aktiviert"};
-	default = 0;
-};
-class param_TIEquipment
-{
-	title="NV-/Thermal in Fahrzeugen/Turrets";
+	title="Persistentes Loadout";
 	values[] = {
-		4,3
-		,2,1
-		,0
+		0, // Deaktiviert
+		1  // Aktiviert
 	};
 	texts[] = {
-		"Deaktiviert","Deaktiviert für Spieler-Fahrzeuge"
-		,"Thermal deaktiviert","Thermal deaktiviert für Spieler-Fahrzeuge"
-		,"Nein"
+		"Deaktiviert",
+		"Aktiviert"
 	};
 	default = 0;
-};*/
+};
+class param_persistent_regular_saves
+{
+	title="Reguläres Speichern";
+	values[] = {
+		0,    // Deaktiviert
+		60,   // 1  Minute
+		120,  // 2  Minuten
+		300,  // 5  Minuten
+		600,  // 10 Minuten
+		1200, // 20 Minuten
+		1800  // 30 Minuten
+	};
+	texts[] = {
+		"Deaktiviert",
+		"jede Minute",
+		"alle 2 Minuten",
+		"alle 5 Minuten",
+		"alle 10 Minuten",
+		"alle 20 Minuten",
+		"alle 30 Minuten"
+	};
+	default = 0;
+};
+class param_persistent_disconnect_save
+{
+	title="Speichern bei Disconnect";
+	values[] = {
+		0, // Deaktiviert
+		1  // Aktiviert
+	};
+	texts[] = {
+		"Deaktiviert",
+		"Aktiviert"
+	};
+	default = 1;
+};
