@@ -109,6 +109,7 @@ Zu den unterstützten Fraktionen (auswählbar in den Parametern bzw. `CfgParams.
 + [Minimal] FIA  - Freedom and Independence Army
 + [Minimal] CTRG - Combat Technology Research Group
 + [Minimal] Guerilla
++ [Minimal] IDAP - International Development & Aid Project
 
 *Minimal/APEX:*
 + [Minimal][APEX] NATO Tropical
