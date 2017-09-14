@@ -1,27 +1,29 @@
 // BW Tropen
 keko_loadout_list = [
 	["---- Führung ----", ""], //0
-	["Platoon Lead", "LEA"], //1
-	["Platoon Sergeant", "SER"], //2
-	["Platoon Medic", "DOC"], //3
-	["Squad Leader", "SQL"], //4
-	["Fireteam Leader", "FTL"], //5
-	["Combat Life Saver", "MED"], //6
+	["Zugführer", "LEA"], //1
+	["Stellv. Zugführer", "SER"], //2
+	["Stabsarzt", "DOC"], //3
+	["Gruppenführer", "SQL"], //4
+	["Truppführer", "FTL"], //5
+	["Sanitäter", "MED"], //6
 	["---- Plebs ----", ""], //7
-	["Rifleman", "RIF"], //8
-	["Rifleman Anti-Tank", "RAT"], //9
+	["Schütze", "RIF"], //8
+	["Schütze AT (Panzerfaust)", "RAT"], //9
 	["Grenadier", "GRE"], //10
-	["Light Machine Gunner", "LMG"], //11
-	["Light Machine Gunner Asst.", "LAS"], //12
+	["Leichtes MG", "LMG"], //11
+	["Leichtes MG Helfer", "LAS"], //12
 	["---- Heavy Weapons ----", ""], //13
-	["Medium Machine Gunner", "MMG"], //14
-	["Medium Machine Gunner Asst.", "MAS"], //15
-	["Missile Specialist Anti-Air", "SAA"], 
-	["Missile Specialist Anti-Air Asst.", "AAA"], 
+	["MMG Schütze", "MMG"], //14
+	["MMG Helfer", "MAS"], //15
+	["ATGM Milan Schütze (Rohr)", "SAT"],
+	["ATGM Milan Helfer (Dreibein)", "AAT"],
+	["Fliegerfaust Schütze", "SAA"], 
+	["Fliegerfaust Helfer", "AAA"], 
 	["---- Support ----", ""], 
-	["Marksman", "MAR"], 
-	["Explosive Specialist", "EOD"], 
-	["Engineer", "ENG"], 
+	["Zielfernrohrschütze", "MAR"], 
+	["Sprengmittelräumer", "EOD"], 
+	["Pionier", "ENG"], 
 	["Pilot", "PIL"], 
 	["Forward Air Controller", "JTC"], 
 	["UAV Operator", "UAV"] 
@@ -48,7 +50,6 @@ keko_loadout_list = [
 ["put", ["#BACKPACK_ENGINEER", "BWA3_Carryall_Tropen"]] call keko_loadout_keywords;
 ["put", ["#BACKPACK_SPECIALIST", "BWA3_FieldPack_Tropen"]] call keko_loadout_keywords;
 ["put", ["#RAT_LAUNCHER", "BWA3_Pzf3"]] call keko_loadout_keywords;
-["put", ["#SAT_LAUNCHER", "BWA3_Pzf3"]] call keko_loadout_keywords;
 ["put", ["#SAA_LAUNCHER", "BWA3_Fliegerfaust"]] call keko_loadout_keywords;
 
 
@@ -71,7 +72,6 @@ keko_loadout_list = [
 
 
 ["put", ["GRE", ["#GRENADIER_MAG"]]] call keko_loadout_tertiary_mag;
-["put", ["SAT", ["#AT_MAG"]]] call keko_loadout_tertiary_mag;
 ["put", ["SAA", ["#AA_MAG"]]] call keko_loadout_tertiary_mag;
 
 
@@ -121,7 +121,8 @@ keko_loadout_list = [
 ["put", ["PIL", ["ACE_NonSteerableParachute"]]] call keko_loadout_backpack;
 ["put", ["UAV", ["B_UAV_01_backpack_F"]]] call keko_loadout_backpack;
 ["put", ["RAT", ["#BACKPACK_SPECIALIST"]]] call keko_loadout_backpack;
-
+["put", ["SAT", ["Redd_Milan_Static_Bag"]]] call keko_loadout_backpack;
+["put", ["AAT", ["Redd_Milan_Static_Tripod"]]] call keko_loadout_backpack;
 
 
 
@@ -188,6 +189,7 @@ keko_loadout_list = [
 ["put", ["FTL", ["Binocular"]]] call keko_loadout_optics;
 ["put", ["LAS", ["Binocular"]]] call keko_loadout_optics;
 ["put", ["MAS", ["Binocular"]]] call keko_loadout_optics;
+["put", ["AAT", ["Rangefinder"]]] call keko_loadout_optics;
 ["put", ["AAA", ["Rangefinder"]]] call keko_loadout_optics;
 ["put", ["JTC", ["Laserdesignator"]]] call keko_loadout_optics;
 
