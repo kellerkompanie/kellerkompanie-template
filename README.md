@@ -312,7 +312,76 @@ Neben den Kisten selbst gibt es noch einige verfügbare Zusatzfunktionen:
 ### Eigene Mission erstellen
 ### Loadout anpassen
 ### Eigene Rolle erstellen
-### Eigene Fraktion erstellen
+### Eigene Fraktion/Loadouts erstellen
+Fragestellung: Wie erstelle ich eine eigene Fraktion inkl. Loadouts, sodass alle bei Spawn die richtige Ausrüstung bekommen?
+
+Benötigt wird:
+- 1x Kellerkompanie Template nach Wahl (einfach runterladen nach MPMissions entpacken, damit werden wir unsere Fraktion testen)
+- Text Editor nach Wahl (ich bevorzuge Sublime Text mit C Syntax Highlighting, macht das Leben leichter)
+- ArmA3 Eden Editor/Virtual Arsenal
+
+Zunächst zum grundlegenden Aufbau, im Template Ordner befinden sich die Fraktionen unter `functions\loadout\factions`, jede der Fraktionen wird in einer separaten `.sqf` Datei definiert. Diese Dateien lassen sich einfach mit einem Texteditor öffnen. Ihr habt mehrere Möglichkeiten:
+- vorhandene Fraktionen editieren
+- die Custom Fraktion editieren
+- ganz neue Fraktion/Datei erstellen
+Wobei letzere Option nicht ganz so einfach ist und später erklärt wird, bei den anderen beiden kann man nachher einfach die Fraktion bei Missionsstart auswählen.
+
+#### Rollen
+Wenn wir rein schauen sehen wir ganz oben erstmal die Liste mit Rollen, die in unserer Fraktion verfügbar sind, als Beispiel hier der Anfang von `001_nato.sqf`:
+```
+keko_loadout_list = [
+	["---- Führung ----", ""], //0
+	["Platoon Lead", "LEA"], //1
+	["Platoon Sergeant", "SER"], //2
+	["Platoon Medic", "DOC"], //3
+	["Squad Leader", "SQL"], //4
+	["Fireteam Leader", "FTL"], //5
+	["Combat Life Saver", "MED"], //6
+	["---- Plebs ----", ""], //7
+	["Rifleman", "RIF"], //8
+	["Rifleman Anti-Tank", "RAT"], //9
+	["Grenadier", "GRE"], //10
+	["Light Machine Gunner", "LMG"], //11
+	["Light Machine Gunner Asst.", "LAS"], //12
+	["---- Heavy Weapons ----", ""], //13
+	["Medium Machine Gunner", "MMG"], //14
+	["Medium Machine Gunner Asst.", "MAS"], //15
+	["Missile Specialist Anti-Tank", "SAT"], //16
+	["Missile Specialist Anti-Tank Asst.", "AAT"], //17
+	["Missile Specialist Anti-Air", "SAA"], //18
+	["Missile Specialist Anti-Air Asst.", "AAA"], //19
+	["---- Support ----", ""], //20
+	["Marksman", "MAR"], //21
+	["Sniper", "SNI"], //22
+	["Spotter", "SPO"], //23
+	["Explosive Specialist", "EOD"], //24
+	["Engineer", "ENG"], //25
+	["Pilot", "PIL"], //26
+	["Forward Air Controller", "JTC"], //27
+	["UAV Operator", "UAV"] //28
+];
+```
+Das ist im Endeffekt eine Liste, die besagt welche Rollen vom Script vergeben werden können und im Loadout-Menü ausgewählt werden können. Links steht jeweils der für Menschen lesbare Name, also bspw. `"Light Machine Gunner"` und rechts das Kürzel, welches intern vom Script verwendet wird um die Rollen zu unterscheiden (`"LMG"`). Die Kürzel sollten immer aus 3 Großbuchstaben bestehen und eindeutig sein. Die Zahlen hinter den `//` sind reine Kommentare aus früheren Zeiten und können ignoriert oder sogar gelöscht werden, sie werden von ArmA sowieso ignoriert bei der Ausführung.
+
+Diese Liste von Rollen kann man jetzt nach Lust und Laune editieren. Man kann bspw. vorhande Rollen umbennenen wenn dies besser zur Fraktion passt. Wir bennenen jetzt den Platoon Medic einfach in Arzt um indem wir die Zeile wie folgt abändern `["Arzt", "DOC"],`. Achtet aber immer darauf, dass euch keine Hochkommata `"`, normale Kommas oder eckige Klammern fehlen gehen, da ihr sonst Syntaxfehler bekommt und im schlechtesten Fall gar nix mehr funktioniert.
+
+Mann kann ebenfalls weitere Rollen einfach hinzufügen, muss nur darauf achten, dass die Kürzel eindeutig sind, also nicht mit einem anderen aus der Liste gleichen und man die Zeichensetzung beachtet. Hinter jedem Eintrag in der Liste `[..]` muss ein Komma folgen, außer beim letzten Element, dort keines. Ein kleines Beispiel wie dies komplett custom aussehen könnte:
+
+```
+keko_loadout_list = [
+	["---- Polizei ----", ""], 
+	["Oberkommissar", "OBK"], 
+	["Kommissar", "KOM"],
+	["Sanitäter", "SAN"],	
+	["---- Zivilist ----", ""],
+	["Bürger", "BUE"],
+	["Arzt", "ARZ"]	
+];
+```
+
+Die Trennzeichen dazwischen, also `["---- Zivilist ----", ""]` können benutzt werden um einzelne Kategorien zu unterscheiden, sind aber ansonsten total optional, nur darauf achten, dass man ein leeres Kürzel angibt, also `""`.
+
+
 ### Eigene Kiste erstellen
 
 
