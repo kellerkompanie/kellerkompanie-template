@@ -381,6 +381,91 @@ keko_loadout_list = [
 
 Die Trennzeichen dazwischen, also `["---- Zivilist ----", ""]` können benutzt werden um einzelne Kategorien zu unterscheiden, sind aber ansonsten total optional, nur darauf achten, dass man ein leeres Kürzel angibt, also `""`.
 
+#### Loadout der Rollen
+So nun zum spannenden Teil, den einzelnen Rollen entsprechende Loadouts zuordnen. Die Einstiegshürde ist etwas höher, aber sobald man das Konzept verstanden hat sollte es einfacher werden. Wir sehen uns nochmal den Anfang von `001_nato.sqf` an:
+```
+["put", ["#PRIMARY_MAG", "30Rnd_65x39_caseless_mag"]] call keko_loadout_keywords;	
+["put", ["#PRIMARY_MAG_TRACER", "30Rnd_65x39_caseless_mag_Tracer"]] call keko_loadout_keywords;
+["put", ["#PRIMARY_MAG_MARKSMAN", "30Rnd_65x39_caseless_mag"]] call keko_loadout_keywords;
+["put", ["#PRIMARY_MAG_MARKSMAN_TRACER", "30Rnd_65x39_caseless_mag"]] call keko_loadout_keywords;
+["put", ["#PRIMARY_MAG_LMG", "100Rnd_65x39_caseless_mag_Tracer"]] call keko_loadout_keywords;
+["put", ["#PRIMARY_MAG_MMG", "130Rnd_338_Mag"]] call keko_loadout_keywords;
+["put", ["#SECONDARY_MAG", "11Rnd_45ACP_Mag"]] call keko_loadout_keywords;
+["put", ["#GRENADIER_MAG", "1Rnd_HE_Grenade_shell"]] call keko_loadout_keywords;
+["put", ["#AT_MAG", "Titan_AT"]] call keko_loadout_keywords;
+["put", ["#AA_MAG", "Titan_AA"]] call keko_loadout_keywords;
+["put", ["#GRENADE", "HandGrenade"]] call keko_loadout_keywords;
+["put", ["#SMOKE_WHITE", "SmokeShell"]] call keko_loadout_keywords;
+["put", ["#SMOKE_GREEN", "SmokeShellGreen"]] call keko_loadout_keywords;
+["put", ["#BACKPACK_RADIO", "TFAR_rt1523g_rhs"]] call keko_loadout_keywords;
+["put", ["#BACKPACK_MED", "B_Kitbag_mcamo"]] call keko_loadout_keywords;
+["put", ["#BACKPACK_AUTORIFLE", "B_FieldPack_khk"]] call keko_loadout_keywords;
+["put", ["#BACKPACK_ENGINEER", "B_Carryall_cbr"]] call keko_loadout_keywords;
+["put", ["#BACKPACK_SPECIALIST", "B_FieldPack_cbr"]] call keko_loadout_keywords;
+["put", ["#RAT_LAUNCHER", "launch_NLAW_F"]] call keko_loadout_keywords;
+["put", ["#SAT_LAUNCHER", "launch_B_Titan_short_F"]] call keko_loadout_keywords;
+["put", ["#SAA_LAUNCHER", "launch_B_Titan_F"]] call keko_loadout_keywords;
+```
+Wie man sieht, was sich von Zeile zu Zeile unterscheidet ist das zwischen den beiden inneren eckigen Klammern, also `["#PRIMARY_MAG", "30Rnd_65x39_caseless_mag"]`. Das ist ein Tupel oder auch Pärchen genannt, ähnlich wie bei den Rollen oben wo links der leserliche Name und rechts das Kürzel war, erhalten wir hier links den Schlüssel und rechts den Wert. Es findet eine Zuordnung statt `"#PRIMARY_MAG"` (links) wird nachher durch `"30Rnd_65x39_caseless_mag"` (rechts) ersetzt werden überall wo es vorkommt. Das erkennt man daran, dass die Schlüssel mit einem `#` anfangen. Hintergrund der ganzen Sache ist, dass hier die allgemeinen Gegenstände definiert werden, die von Fraktion zu Fraktion unterschiedlich sind, die Namen sollten größtenteils selbstverändlich sein. Diese Schlüssel werden nachher benutzt um die Westen/Uniformen etc. mit den zur Waffe passenden Magazinen etc. zu füllen. Statt beim Rifleman zu sagen der bekommt 6x 5.56mm NATO Munition gibt man dann an: der Rifleman bekommt 6x das #PRIMARY_MAG. Wenn man sich dann später entscheidet die Waffe zu wechseln muss man die Munition nur an einer Stelle anpassen und entsprechend können auch Kisten direkt mit der richtigen Munition gefüllt werden.
+
+Gucken wir uns nun die nächsten Zeilen an, dort werden jetzt pro Rolle jeweils die einzelnen Loadouts zugewiesen:
+```
+["put", ["DEFAULT", ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam_worn"]]] call keko_loadout_uniform;
+["put", ["LEA", ["U_B_CombatUniform_mcam"]]] call keko_loadout_uniform;
+["put", ["PIL", ["U_B_HeliPilotCoveralls"]]] call keko_loadout_uniform;	
+["put", ["SNI", ["U_B_FullGhillie_sard"]]] call keko_loadout_uniform;
+["put", ["SPO", ["U_B_FullGhillie_sard"]]] call keko_loadout_uniform;
+```
+Hier kommen nun wieder die Kürzel der einzelnen Rollen ins Spiel. In dem Beispiel werden hier die Uniformen zugeordnet, erkennbar daran, dass zum Schluss der Zeile jeweils `keko_loadout_uniform` steht. Aber was passiert hier jetzt genau? In Zeile 1 `["put", ["DEFAULT", ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam_worn"]]] call keko_loadout_uniform;` haben wir nach selbem Muster wie bisher wieder ein Tupel, nämlich `["DEFAULT", ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam_worn"]]`, das heißt dem Schlüssel `"DEFAULT"` wird die Liste von möglichen Uniformen `["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam_worn"]` zugeordnet. Beim zuweisen des Loadouts wird dann zufällig ein Element aus dieser Liste genommen und als Uniform verwendet, damit man ein bisschen wechsel drin hat. 
+
+Will man für eine bestimmte Rolle auf jeden Fall genau eine Uniform zulassen, so macht man nur ein Element in die Liste, wie bspw. in der Zeile von `"LEA"`. Dem Kürzel der Rolle (LEA=Platoon Lead) wird dabei die Uniform mit ArmA Itembezeichnung `U_B_CombatUniform_mcam` zugewiesen. Auf selbe Art und Weise funktionieren auch die weiteren Gegenstände, wie Helme, Westen usw.
+
+#### Der DEFAULT Schlüssel
+Der Schlüssel `"DEFAULT"` wird dazu benutzt die absolute Standard Ausrüstung zu definieren, die sich alle teilen. Im Regelfall entspricht diese Ausrüstung dem normalen Rifleman. Man beachte, dass man nicht unbedingt für jede Rolle/Kürzel die genaue Ausrüstung defnieren muss. Lasse ich bspw. beim Platoon Lead (LEA) die Zuweisung der Primärwaffe weg, so wird im automatisch die in DEFAULT definierte Waffe zugewiesen. Dies gilt analog für alle Items und Klassen.
+
+#### Wie komme ich an die Itembezeichnungen?
+Ihr öffnet ArmA3, geht entweder ins Virtual Arsenal oder per Editor in die Loadout Anpassung (im Endeffekt wieder Virtual Arsenal) und zieht eine Person entsprechend euren Wünschen an. Wenn ihr bspw. die Uniform für Lead ändern wollt, sucht ihr euch aus der Liste die passende Uniform aus. 
+
+![](https://github.com/Schwaggot/kellerkompanie-template/blob/master/doc/virtual_arsenal_uniform.jpg?raw=true)
+
+Dann habt ihr die Möglichkeit das Loadout, das ihr aktuell seht zu exportieren, dazu entweder `STRG + C` oder unten den Knopf zum Exportieren drücken. Daraufhin landet das aktuelle Loadout in eurer Zwischenablage. Ihr öffnet jetzt also ein neues Dokument im Texteditor und fügt dort den Text aus der Zwischenablage ein `STRG + V` oder meist Rechtsklick -> Einfügen. In meinem Beispiel erhält man dann sowas:
+```
+comment "Exported from Arsenal by Schwaggot";
+
+comment "Remove existing items";
+removeAllWeapons this;
+removeAllItems this;
+removeAllAssignedItems this;
+removeUniform this;
+removeVest this;
+removeBackpack this;
+removeHeadgear this;
+removeGoggles this;
+
+comment "Add containers";
+this forceAddUniform "U_BG_Guerrilla_6_1";
+for "_i" from 1 to 2 do {this addItemToUniform "ACE_fieldDressing";};
+this addItemToUniform "ACE_morphine";
+this addItemToUniform "rhs_mag_nspn_red";
+
+comment "Add weapons";
+
+comment "Add items";
+this linkItem "ItemMap";
+this linkItem "ItemCompass";
+this linkItem "ItemWatch";
+this linkItem "ItemRadio";
+
+comment "Set identity";
+this setFace "WhiteHead_15";
+this setSpeaker "ace_novoice";
+```
+Die Zeilen, die mit `comment` anfangen, könnt ihr ignorieren, die anderen Zeilen vollführen die Magie. Am Anfang werden erstmal alle Items von der Figur entfernt und dann Stück für Stück das gewünschte Loadout zugewiesen. In unserem Fall sind wir jetzt an der Zeile interessiert, die mit der Uniform zu tun hat, also `this forceAddUniform "U_BG_Guerrilla_6_1";`. Von dort extrahieren (Text markieren und kopieren) wir die Bezeichnung für die Uniform, also `U_BG_Guerrilla_6_1` und fügen diese in unsere Zeile von oben ein. Aus `["put", ["LEA", ["U_B_CombatUniform_mcam"]]] call keko_loadout_uniform;` wird dann `["put", ["LEA", ["U_BG_Guerrilla_6_1"]]] call keko_loadout_uniform;`. Analog verfährt man mit allen Dingen, die man ändern möchte.
+
+#### Inventar von Uniformen/Westen/etc. zuweisen
+Beim Inventar von Uniformen, Westen etc. muss man ein weiteres Detail beachten, man muss noch angeben wie viel von etwas man haben möchte. Gucken wir uns z.B. die Zeile `["put", ["GRE", [[10, "#GRENADIER_MAG"]]]] call keko_loadout_backpack_inventory;`, dort werden dem Grenadier (Kürzel GRE) 10x das Item #GRENADIER_MAG in den Rucksack gelegt. Wollen wir ihm jetzt statt 10 nur 8 Granaten und dafür noch 2 Primärmagazine in den Rucksack legen, so sieht die Zeile wie folgt aus (man beachte, dass es eine Liste von Tupeln ist!): `["put", ["GRE", [[8, "#GRENADIER_MAG"],[2,"#PRIMARY_MAG"]]]] call keko_loadout_backpack_inventory;`. Dies gilt eigentlich für alle Dinge mit Inventar.
+
+
 
 ### Eigene Kiste erstellen
 
