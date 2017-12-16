@@ -369,14 +369,14 @@ class ace_medical_keepLocalSettingsSynced {
     force = 0;
 };
 class ace_medical_healHitPointAfterAdvBandage {
-    value = 1;
+    value = 0;
     typeName = "BOOL";
-    force = 0;
+    force = 1;
 };
 class ace_medical_painIsOnlySuppressed {
-    value = 1;
+    value = 0;
     typeName = "BOOL";
-    force = 0;
+    force = 1;
 };
 class ace_medical_allowUnconsciousAnimationOnTreatment {
     value = 0;

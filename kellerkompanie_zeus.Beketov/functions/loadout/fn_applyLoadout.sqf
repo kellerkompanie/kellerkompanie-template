@@ -130,8 +130,26 @@ if(["containsKey", _prefix] call keko_loadout_ranks) then {
 if(count _uniform != 0) then {
 	_random_uniform = selectRandom _uniform;
 	_random_uniform = [_random_uniform] call keko_fnc_replaceKeyword;
-	player forceAddUniform _random_uniform;
-	
+	player forceAddUniform _random_uniform;	
+};
+
+if(count _vest != 0) then {
+	_random_vest = selectRandom _vest;
+	_random_vest = [_random_vest] call keko_fnc_replaceKeyword;
+	player addVest _random_vest;	
+};
+
+if(count _backpack != 0) then {
+	_random_backpack = selectRandom _backpack;
+	_random_backpack = [_random_backpack] call keko_fnc_replaceKeyword;
+	player addBackpack _random_backpack;	
+};
+
+
+/* Workaround for Mods adding Medikits and Firstaidkits to Uniforms, Backpacks etc.*/
+clearAllItemsFromBackpack player;
+
+if(count _uniform != 0) then {
 	if(count _uniform_inventory != 0) then {
 		{
 			for "_i" from 1 to (_x select 0) do {
@@ -144,10 +162,6 @@ if(count _uniform != 0) then {
 };
 
 if(count _vest != 0) then {
-	_random_vest = selectRandom _vest;
-	_random_vest = [_random_vest] call keko_fnc_replaceKeyword;
-	player addVest _random_vest;
-
 	if(count _vest_inventory != 0) then {		
 		{ 
 			for "_i" from 1 to (_x select 0) do {
@@ -160,10 +174,6 @@ if(count _vest != 0) then {
 };
 
 if(count _backpack != 0) then {
-	_random_backpack = selectRandom _backpack;
-	_random_backpack = [_random_backpack] call keko_fnc_replaceKeyword;
-	player addBackpack _random_backpack;
-
 	if(count _backpack_inventory != 0) then {		
 		{ 
 			for "_i" from 1 to (_x select 0) do {
@@ -174,6 +184,8 @@ if(count _backpack != 0) then {
 		} forEach _backpack_inventory;
 	};
 };
+
+
 
 if(count _helmet != 0) then {
 	_random_helmet = selectRandom _helmet;

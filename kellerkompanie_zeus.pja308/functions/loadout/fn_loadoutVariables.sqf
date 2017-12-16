@@ -554,6 +554,29 @@ switch (_param_faction) do {
 		#include "factions\160_foxhound_siberian_guard.sqf"
 		
 	};
+
+
+
+	/* Ironfront */
+
+	case 500: {
+		// Armia Krajowa (Partyzanci)
+		#include "factions\500_armia_krajowa_partyzanci.sqf"
+
+	};
+
+	case 501: {
+		// Armia Krajowa (Camo)
+		#include "factions\501_armia_krajowa_camo.sqf"
+		
+	};
+
+	case 502: {
+		// Armia Krajowa (Grade)
+		#include "factions\502_armia_krajowa_grade.sqf"
+		
+	};
+	
 	
 
 

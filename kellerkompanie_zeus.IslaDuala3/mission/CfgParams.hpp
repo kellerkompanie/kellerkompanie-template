@@ -93,6 +93,9 @@ class param_faction
 		150, // Israel Defense Forces
 
 		160, // Siberian Foxhound Guard				
+
+		500, // Armia Krajowa (Partyzanci)
+		501, // Armia Krajowa (Camo)
 		
 		999  // Custom
 	};
@@ -145,7 +148,10 @@ class param_faction
 
 		"[Main] Israel Defense Forces",
 
-		"[Main] Foxhound Siberian Guard",		
+		"[Main] Foxhound Siberian Guard",	
+
+		"[Ironfront] Armia Krajowa (Partyzanci)",	
+		"[Ironfront] Armia Krajowa (Camo)",	
 		
 		"Custom"
 	};
