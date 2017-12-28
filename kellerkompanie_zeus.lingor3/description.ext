@@ -61,11 +61,13 @@ wreckManagerMode = 0; // 0 None, 1 All, 2 None But Respawned, 3 All But Respawne
 saving = 0; // disable saving
 showGroupIndicator = 0; // do not display group members on GPS
 
+cba_settings_hasSettingsFile = 1; // load cba settings from cba_settings.sqf
+
 class Header
 {
 	gameType = COOP;
 	minPlayers = 1;
-	maxPlayers = 32;
+	maxPlayers = 128;
 };
 
 class Params
@@ -81,11 +83,6 @@ class cfgFunctions
 
 #include "functions\loadout\internal\loadoutDialog.hpp"
 #include "functions\logistics\internal\logisticDialog.hpp"
-
-class ACE_Settings
-{
-	#include "mission\CfgACE.hpp"
-};
 
 class CfgDebriefingSections {
 	class acex_killTracker {
