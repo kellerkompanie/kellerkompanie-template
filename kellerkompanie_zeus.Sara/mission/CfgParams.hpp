@@ -92,7 +92,9 @@ class param_faction
 
 		150, // Israel Defense Forces
 
-		160, // Siberian Foxhound Guard				
+		160, // Siberian Foxhound Guard	
+		161, // Russian Army EMR Summer		
+		162, // Russian Army EMR Desert		
 
 		500, // Armia Krajowa (Partyzanci)
 		501, // Armia Krajowa (Camo)
@@ -149,6 +151,8 @@ class param_faction
 		"[Main] Israel Defense Forces",
 
 		"[Main] Foxhound Siberian Guard",	
+		"[Main] Russian Army EMR Summer",
+		"[Main] Russian Army EMR Desert",		
 
 		"[Ironfront] Armia Krajowa (Partyzanci)",	
 		"[Ironfront] Armia Krajowa (Camo)",	

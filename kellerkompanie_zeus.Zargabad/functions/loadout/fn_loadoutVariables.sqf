@@ -555,6 +555,20 @@ switch (_param_faction) do {
 		
 	};
 
+	case 161: {
+		// Russian Army EMR Summer
+		#include "factions\161_russia_emr_summer.sqf"
+		
+	};
+
+	case 162: {
+		// Russian Army EMR Desert
+		#include "factions\162_russia_emr_desert.sqf"
+		
+	};
+
+
+
 
 
 	/* Ironfront */

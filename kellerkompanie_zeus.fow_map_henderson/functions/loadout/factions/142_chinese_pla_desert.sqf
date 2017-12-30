@@ -144,10 +144,10 @@ keko_loadout_list = [
 ["put", ["AAT", [[2, "#AT_MAG"]]]] call keko_loadout_backpack_inventory;
 ["put", ["SAA", [[1, "#AA_MAG"]]]] call keko_loadout_backpack_inventory;
 ["put", ["AAA", [[2, "#AA_MAG"]]]] call keko_loadout_backpack_inventory;
-["put", ["LEA", [[1, "ACE_HuntIR_monitor"],[5, "ACE_HuntIR_M203"]]]] call keko_loadout_backpack_inventory;
-["put", ["SER", [[1, "ACE_HuntIR_monitor"],[5, "ACE_HuntIR_M203"]]]] call keko_loadout_backpack_inventory;
+["put", ["LEA", []]] call keko_loadout_backpack_inventory;
+["put", ["SER", []]] call keko_loadout_backpack_inventory;
 ["put", ["JTC", [[4,"Laserbatteries"]]]] call keko_loadout_backpack_inventory;
-["put", ["SQL", [[1, "ACE_HuntIR_monitor"],[5, "ACE_HuntIR_M203"]]]] call keko_loadout_backpack_inventory;
+["put", ["SQL", []]] call keko_loadout_backpack_inventory;
 ["put", ["MED", keko_loadout_backpack_inventory_med]] call keko_loadout_backpack_inventory;
 ["put", ["DOC", keko_loadout_backpack_inventory_doc]] call keko_loadout_backpack_inventory;
 ["put", ["ENG", keko_loadout_backpack_inventory_eng]] call keko_loadout_backpack_inventory;
