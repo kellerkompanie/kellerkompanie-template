@@ -52,7 +52,7 @@ disableChannels[]={ // {channelID<number>, disableChat<bool>, disableVoice<bool>
 allowFunctionsLog = 1; // allow functions to log into RPT file
 enableDebugConsole = 1; // 0 only in edit, 1 in SP and hosts/admins, 2 everyone
 
-corpseManagerMode = 1; // 0 None, 1 All, 2 None But Respawned, 3 All But Respawned
+corpseManagerMode = 0; // 0 None, 1 All, 2 None But Respawned, 3 All But Respawned
 corpseLimit = 20;
 corpseRemovalMinTime = 60; // seconds
 corpseRemovalMaxTime = 600; // seconds

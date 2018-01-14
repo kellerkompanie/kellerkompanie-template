@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=234;
+		nextID=236;
 	};
 	class Camera
 	{
-		pos[]={8497.1299,48.072891,3898.7004};
-		dir[]={-0.78904766,-0.58612275,0.18437587};
-		up[]={-0.57078815,0.81019092,0.13337573};
-		aside[]={0.22755487,-1.0306248e-006,0.9738251};
+		pos[]={8457.7588,16.061396,3907.1548};
+		dir[]={-0.44222307,-0.75802475,0.47955474};
+		up[]={-0.51389313,0.6521914,0.55727619};
+		aside[]={0.73518807,-6.0116872e-007,0.67795199};
 	};
 };
 binarizationWanted=0;
@@ -27,16 +27,17 @@ addons[]=
 	"ace_gforces",
 	"ace_parachute",
 	"A3_Modules_F_Curator_Curator",
-	"A3_Structures_F_Mil_Flags",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Weapons_F_Ammoboxes",
-	"ace_cargo"
+	"ace_cargo",
+	"A3_Structures_F_Mil_Flags",
+	"A3_Supplies_F_Heli_CargoNets"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -85,6 +86,13 @@ class AddonsMetaData
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
+		};
+		class Item7
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -146,7 +154,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=37;
+		items=38;
 		class Item0
 		{
 			dataType="Group";
@@ -40672,46 +40680,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8450.3018,8.5668049,3913.376};
-				angles[]={0,5.629416,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				init="call{[this] call keko_fnc_initLogisticsObject;}";
-			};
-			id=219;
-			type="FlagPole_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="Enh_featureType";
-					expression="_this setFeatureType (parseNumber _value)";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item35
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={8452.9395,4.5900002,3909.6775};
 				angles[]={0,0.13162839,0};
 			};
@@ -40723,19 +40691,19 @@ class Mission
 			id=220;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Object";
 			class PositionInfo
 			{
 				position[]={8451.4863,5.4824228,3911.731};
-				angles[]={0,5.6037421,0};
+				angles[]={0,5.6037464,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call keko_fnc_initLoadoutObject;}";
+				init="call{[this] call keko_fnc_initLoadoutObject;" \n "[this] call Keko_fnc_initPersistentLoadoutObject;}";
 			};
 			id=221;
 			type="B_supplyCrate_F";
@@ -40818,6 +40786,105 @@ class Mission
 					};
 				};
 				nAttributes=4;
+			};
+		};
+		class Item36
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8450.1484,8.5668049,3913.3689};
+				angles[]={0,5.5425649,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{[this, 50, ""Safezone""] call keko_fnc_initPersistentZone;}";
+			};
+			id=234;
+			type="FlagPole_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item37
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8453.1484,5.4153028,3914.7009};
+				angles[]={0,4.773015,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this] call keko_fnc_initLogisticsObject;" \n "}";
+			};
+			id=235;
+			type="B_CargoNet_01_ammo_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};

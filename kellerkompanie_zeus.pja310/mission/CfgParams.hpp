@@ -320,7 +320,7 @@ class param_persistent_loadout
 		"Deaktiviert",
 		"Aktiviert"
 	};
-	default = 0;
+	default = 1;
 };
 class param_persistent_regular_saves
 {
@@ -331,30 +331,13 @@ class param_persistent_regular_saves
 		120,  // 2  Minuten
 		300,  // 5  Minuten
 		600,  // 10 Minuten
-		1200, // 20 Minuten
-		1800  // 30 Minuten
 	};
 	texts[] = {
 		"Deaktiviert",
 		"jede Minute",
 		"alle 2 Minuten",
 		"alle 5 Minuten",
-		"alle 10 Minuten",
-		"alle 20 Minuten",
-		"alle 30 Minuten"
+		"alle 10 Minuten"
 	};
-	default = 0;
-};
-class param_persistent_disconnect_save
-{
-	title="Speichern bei Disconnect";
-	values[] = {
-		0, // Deaktiviert
-		1  // Aktiviert
-	};
-	texts[] = {
-		"Deaktiviert",
-		"Aktiviert"
-	};
-	default = 1;
+	default = 60;
 };

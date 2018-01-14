@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=232;
+		nextID=234;
 	};
 	class Camera
 	{
-		pos[]={4984.6074,245.3228,5870.0415};
-		dir[]={0.71389514,-0.42396745,0.55738306};
-		up[]={0.33420858,0.90565628,0.26093769};
-		aside[]={0.61542499,-2.0489097e-007,-0.78823549};
+		pos[]={5014.9951,244.28209,5901.7822};
+		dir[]={0.59064269,-0.75105995,0.29516953};
+		up[]={0.6718502,0.66021585,0.33575219};
+		aside[]={0.44704327,-5.8207661e-008,-0.89454865};
 	};
 };
 binarizationWanted=0;
@@ -27,16 +27,17 @@ addons[]=
 	"ace_gforces",
 	"ace_parachute",
 	"A3_Modules_F_Curator_Curator",
-	"A3_Structures_F_Mil_Flags",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Weapons_F_Ammoboxes",
-	"ace_cargo"
+	"ace_cargo",
+	"A3_Structures_F_Mil_Flags",
+	"A3_Supplies_F_Heli_CargoNets"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -85,6 +86,13 @@ class AddonsMetaData
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
+		};
+		class Item7
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -146,7 +154,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=37;
+		items=38;
 		class Item0
 		{
 			dataType="Group";
@@ -40726,47 +40734,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5043.3989,212.86702,5910.4023};
-				angles[]={0,1.623817,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				init="call{[this] call keko_fnc_initLogisticsObject;}";
-			};
-			id=217;
-			type="FlagPole_F";
-			atlOffset=0.0066375732;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="Enh_featureType";
-					expression="_this setFeatureType (parseNumber _value)";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item35
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={5038.8721,208.93326,5910.7979};
 				angles[]={0,2.409215,0};
 			};
@@ -40779,23 +40746,22 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.0041656494;
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5041.4448,209.786,5910.5762};
-				angles[]={0.0050033992,1.5981431,6.2457013};
+				position[]={5041.4443,209.78651,5910.5762};
+				angles[]={0.0050090947,1.5981456,6.2456956};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] call keko_fnc_initLoadoutObject;}";
+				init="call{[this] call keko_fnc_initLoadoutObject;" \n "[this] call Keko_fnc_initPersistentLoadoutObject;}";
 			};
 			id=219;
 			type="B_supplyCrate_F";
-			atlOffset=-0.00050354004;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -40875,6 +40841,106 @@ class Mission
 					};
 				};
 				nAttributes=4;
+			};
+		};
+		class Item36
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5043.4971,212.86674,5910.623};
+				angles[]={0,1.6114173,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{[this, 50, ""Safezone""] call keko_fnc_initPersistentZone;}";
+			};
+			id=232;
+			type="FlagPole_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item37
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5042.7427,209.75745,5913.3467};
+				angles[]={6.2606869,0.78539819,0.022498533};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this] call keko_fnc_initLogisticsObject;" \n "}";
+			};
+			id=233;
+			type="B_CargoNet_01_ammo_F";
+			atlOffset=-0.0002746582;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};

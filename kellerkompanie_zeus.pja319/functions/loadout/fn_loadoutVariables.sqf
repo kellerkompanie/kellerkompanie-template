@@ -74,7 +74,7 @@ keko_loadout_vest_inventory_medic_default = [[10, "ACE_epinephrine"],[10, "ACE_m
 keko_loadout_backpack_inventory_med = [[50, "ACE_elasticBandage"],[20, "ACE_fieldDressing"],[6, "ACE_salineIV_500"],[4, "ACE_salineIV"],[10, "ACE_tourniquet"],[10,"adv_aceSplint_splint"]];
 keko_loadout_backpack_inventory_doc = [[50, "ACE_elasticBandage"],[20, "ACE_fieldDressing"],[6, "ACE_salineIV_500"],[4, "ACE_salineIV"],[10, "ACE_tourniquet"],[10,"adv_aceSplint_splint"],[1,"adv_aceCPR_AED"]];
 keko_loadout_backpack_inventory_eod = [[6,"DemoCharge_Remote_Mag"],[2,"SatchelCharge_Remote_Mag"],[1,"ACE_DefusalKit"],[1,"ACE_Clacker"]];
-keko_loadout_backpack_inventory_eng = [[1, "ToolKit"],[1, "ACE_wirecutter"],[1, "ACE_EntrenchingTool"]];
+keko_loadout_backpack_inventory_eng = [[1, "ToolKit"],[1, "ACE_wirecutter"],[1, "ACE_EntrenchingTool"],[1, "ACE_Fortify"]];
 
 
 keko_logistic_crate_large_blu = "B_CargoNet_01_ammo_F";

@@ -105,7 +105,7 @@ waitUntil {time > 0};
 sleep 1;
 //loadouts are placed on the units on spawn
 if(missionNamespace getVariable ["keko_par_pre_loadout",1] == 1) then {
-	[player, (str player) select [0,3]] call keko_fnc_giveLoadout;
+	[player, (str player) select [0,3], false] call keko_fnc_giveLoadout;
 };
 
 

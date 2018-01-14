@@ -12,7 +12,7 @@ if (_role isEqualTo "") exitWith {};
 
 //hint str(_this);
 
-[player, _role] call keko_fnc_giveLoadout;
+[player, _role, true] call keko_fnc_giveLoadout;
 
 closeDialog 1; // OK
 

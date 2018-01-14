@@ -48,9 +48,9 @@ class ace_medical_maxReviveTime
 {
 	title = "ACE Medical Max Revive Time";
 	ACE_setting = 1;
-	values[] = {60, 180, 600, 1200, 1800, 2700, 3600};
+	values[] = {60, 180, 300, 600, 900, 1200, 1800, 2700, 3600};
 	default = 600;
-	texts[] =  {"1 Minute", "3 Minutes", "10 Minutes", "20 Minutes", "30 Minutes", "45 Minutes", "60 Minutes"};
+	texts[] =  {"1 Minute", "3 Minutes", "5 Minutes", "10 Minutes", "15 Minutes", "20 Minutes", "30 Minutes", "45 Minutes", "60 Minutes"};
 };
 class ace_medical_enableFor
 {
@@ -76,9 +76,6 @@ class ace_medical_healHitPointAfterAdvBandage
 	default = 0;
 	texts[] =  {"Disabled", "Enabled"};
 };
-
-
-
 
 
 

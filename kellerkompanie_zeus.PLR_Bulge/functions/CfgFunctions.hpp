@@ -38,9 +38,14 @@ class keko
 	{
 		file = "functions\loadout\persistent";
 		class initPersistentLoadoutObject {};
-		class saveLoadout {};
-		class loadLoadout {};
+		class saveLoadoutDB {};
+		class loadLoadoutDB {};
+		class regularSaving {};
 		class persistentSettings {};
+		class initPersistentZone {};
+		class saveZoneDB {};
+		class loadZoneDB {};
+		class loadoutExists {};
 	};
 	class server
 	{
