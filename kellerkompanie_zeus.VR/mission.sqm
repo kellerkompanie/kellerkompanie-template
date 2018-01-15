@@ -8,7 +8,7 @@ class EditorData
 	toggles=517;
 	class ItemIDProvider
 	{
-		nextID=1131;
+		nextID=1132;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4303.3696,31.930304,2131.8083};
+		pos[]={4297.7983,25.227306,2126.4924};
 		dir[]={-0.49163252,-0.56883585,-0.65953863};
 		up[]={-0.34000829,0.82244658,-0.45614612};
 		aside[]={-0.80183023,-3.4552068e-007,0.59769696};
@@ -157,7 +157,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=39;
 		class Item0
 		{
 			dataType="Group";
@@ -18334,6 +18334,64 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item38
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4282.5732,5.2840548,2108.3149};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="crate";
+			};
+			id=1131;
+			type="Box_NATO_Ammo_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Enh_featureType";
+					expression="_this setFeatureType (parseNumber _value)";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};

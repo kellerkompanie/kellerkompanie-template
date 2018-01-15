@@ -46,8 +46,8 @@ class keko
 		class saveZoneDB {};
 		class loadZoneDB {};
 		class loadoutExists {};
-		class setContainerContents {};
-		class getContainerContents {};
+		class setContainerContent {};
+		class getContainerContent {};
 	};
 	class server
 	{

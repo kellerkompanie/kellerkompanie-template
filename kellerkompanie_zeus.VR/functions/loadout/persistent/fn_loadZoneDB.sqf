@@ -42,45 +42,24 @@ _nearestObjects = nearestObjects [_object, ["Land_BagFence_Long_F","Land_BagFenc
 } forEach _nearestObjects;
 
 {
-	_x params["_class","_pos","_dir","_items","_magazines","_weapons","_containerData"];
+	_x params["_class","_pos","_dir","_containerContent"];
 
 	_object =  createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 	_object setDir _dir;
 
-	clearWeaponCargoGlobal _object;
-	clearMagazineCargoGlobal _object;
-	clearBackpackCargoGlobal _object;
-	clearItemCargoGlobal _object;
-
-	{ _object addItemCargoGlobal [_x, _items select 1 select _forEachIndex]; } forEach (_items select 0);	
-	{ _object addMagazineCargoGlobal [_x, _magazines select 1 select _forEachIndex]; } forEach (_magazines select 0);
-	//{ _object addBackpackCargoGlobal [_x, _backpacks select 1 select _forEachIndex]; } forEach (_backpacks select 0);
-	{ _object addWeaponCargoGlobal [_x, _weapons select 1 select _forEachIndex]; } forEach (_weapons select 0);	
-
-	[_object, _containerData] call keko_fnc_setContainerContents;
+	[_object, _containerContent] call keko_fnc_setContainerContent;
 
 } forEach _crates;
 
 {
-	_x params["_class","_pos","_dir","_items","_magazines","_weapons","_containerData","_fuel"];
+	_x params["_class","_pos","_dir","_containerContent","_fuel"];
 	
 	_object = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 	_object setDir _dir;
 
-	clearWeaponCargoGlobal _object;
-	clearMagazineCargoGlobal _object;
-	clearBackpackCargoGlobal _object;
-	clearItemCargoGlobal _object;
-
-	/*{ _object addItemCargoGlobal [_x, _items select 1 select _forEachIndex]; } forEach (_items select 0);	
-	{ _object addMagazineCargoGlobal [_x, _magazines select 1 select _forEachIndex]; } forEach (_magazines select 0);
-	//{ _object addBackpackCargoGlobal [_x, _backpacks select 1 select _forEachIndex]; } forEach (_backpacks select 0);
-	{ _object addWeaponCargoGlobal [_x, _weapons select 1 select _forEachIndex]; } forEach (_weapons select 0);	
-	*/
-
 	_object setFuel _fuel;
 
-	[_object, _containerData] call keko_fnc_setContainerContents;
+	[_object, _containerContent] call keko_fnc_setContainerContent;
 
 } forEach _vehicles;
 
