@@ -120,6 +120,30 @@ if ( toUpper (_prefix) == "CMD" ) then {
 	};
 };
 
+
+_param_undercover_faction = "param_undercover_faction" call BIS_fnc_getParamValue;
+
+if(_param_undercover_faction > 0) then {
+	_player_side = 0;
+
+	switch ( side (group player) ) do {
+		case west: { _player_side = 1; };
+		case independent: { _player_side = 2; };
+		case east: { _player_side = 3; };		
+		default {};
+	};
+
+	if(_player_side == _param_undercover_faction) then {
+		player setVariable ["isSneaky", true, true];
+		[player] execVM "INC_undercover\Scripts\initUCR.sqf";
+	};
+};
+
+
+
+
+
+
 //safe zones around respawn markers::
 /*switch ( side (group player) ) do {
 	case west: { [player,"respawn_west",70] call adv_fnc_safezone; };

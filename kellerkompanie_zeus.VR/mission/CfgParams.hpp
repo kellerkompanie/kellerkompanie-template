@@ -330,7 +330,7 @@ class param_persistent_loadout
 		"Deaktiviert",
 		"Aktiviert"
 	};
-	default = 1;
+	default = 0;
 };
 class param_persistent_regular_saves
 {
@@ -348,6 +348,33 @@ class param_persistent_regular_saves
 		"alle 2 Minuten",
 		"alle 5 Minuten",
 		"alle 10 Minuten"
+	};
+	default = 0;
+};
+
+
+
+
+class dummy_settings_undercover {
+	title = "---------------------- Undercover Settings ----------------------";
+	values[] = {-99999};
+	default = -99999;
+	texts[] = {""};
+};
+class param_undercover_faction
+{
+	title="Undercover Fraktion";
+	values[] = {
+		0, // Deaktiviert
+		1, // Blufor
+		2, // Independent
+		3  // Opfor
+	};
+	texts[] = {
+		"Deaktiviert",
+		"BLUFOR",
+		"Independent",
+		"OPFOR"
 	};
 	default = 0;
 };

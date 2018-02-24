@@ -590,7 +590,18 @@ switch (_param_faction) do {
 		#include "factions\502_armia_krajowa_grade.sqf"
 		
 	};
+
+	case 510: {
+		// Heer
+		#include "factions\510_heer.sqf"
+		
+	};
 	
+	case 520: {
+		// British Commandos
+		#include "factions\520_commandos.sqf"
+		
+	};
 	
 
 

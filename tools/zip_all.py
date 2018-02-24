@@ -22,11 +22,11 @@ if __name__ == '__main__':
 
     filenames = glob.glob('kellerkompanie_zeus.*')
     filenames_count = len(filenames)
-    print 'Found', filenames_count, 'files inside', template_directory
+    print ('Found', filenames_count, 'files inside', template_directory)
 
     for filename in filenames:
         new_filename = release_directory + filename + ".zip"
-        print filename, '->', new_filename
+        print (filename, '->', new_filename)
 
         zipf = zipfile.ZipFile(new_filename, 'w', zipfile.ZIP_DEFLATED)
         zipdir(filename, zipf)

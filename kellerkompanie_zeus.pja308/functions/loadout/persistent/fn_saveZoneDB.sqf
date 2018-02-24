@@ -34,12 +34,9 @@ _objects = [];
 		_pos = position _x;
 		_dir = getDir _x;		
 
-		_items = getItemCargo _x;
-		_magazines = getMagazineCargo _x;
-		_backpacks = getBackpackCargo _x;
-		_weapons = getWeaponCargo _x;
+		_containerContent = _x call keko_fnc_getContainerContent;
 
-		_crates pushBack [ _class, _pos, _dir, _items, _magazines, _backpacks, _weapons];
+		_crates pushBack [ _class, _pos, _dir, _containerContent];
 	};
 	
 } forEach _nearestCrates;
@@ -49,13 +46,11 @@ _objects = [];
 	_pos = position _x;
 	_dir = getDir _x;
 
-	_items = getItemCargo _x;
-	_magazines = getMagazineCargo _x;
-	_backpacks = getBackpackCargo _x;
-	_weapons = getWeaponCargo _x;
+	_containerContent = _x call keko_fnc_getContainerContent;
+
 	_fuel = fuel _x;
 
-	_vehicles pushBack [_class, _pos, _dir, _items, _magazines, _backpacks, _weapons, _fuel];
+	_vehicles pushBack [_class, _pos, _dir, _containerContent, _fuel];
 	
 } forEach _nearestVehicles;
 

@@ -76,9 +76,10 @@ class Params
 	#include "mission\CfgACEParams.hpp"
 };
 
-class cfgFunctions 
+class CfgFunctions 
 {
 	#include "functions\CfgFunctions.hpp"
+	#include "INC_undercover\cfgFunctions.hpp"
 };
 
 #include "functions\loadout\internal\loadoutDialog.hpp"
@@ -88,5 +89,11 @@ class CfgDebriefingSections {
 	class acex_killTracker {
 		title = "Acex Killed Events";
 		variable = "acex_killTracker_outputText";
+	};
+};
+
+class Extended_InitPost_EventHandlers {
+     class CAManBase {
+		init = "_this call (compile preprocessFileLineNumbers 'postInitXEH.sqf')";
 	};
 };

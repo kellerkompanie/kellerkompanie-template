@@ -46,6 +46,8 @@ class keko
 		class saveZoneDB {};
 		class loadZoneDB {};
 		class loadoutExists {};
+		class setContainerContent {};
+		class getContainerContent {};
 	};
 	class server
 	{
@@ -64,6 +66,7 @@ class keko
 	class client
 	{
 		class timedHint {};
+		class switchUnconscious {};
 	};
 	class shared
 	{

@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
     filenames = glob.glob('kellerkompanie_zeus.*')
     filenames_count = len(filenames)
-    print 'Found', filenames_count, 'files inside', template_directory
+    print ('Found ' + str(filenames_count) + ' files inside ' + template_directory)
 
     for filename in filenames:
         if filename == source_directory:
@@ -70,7 +70,7 @@ if __name__ == '__main__':
 
         src = source_directory
         dst = filename
-        print src, '->', dst
+        print (src, ' -> ', dst)
 
         copytree_multi(src, dst, ignore=to_ignore)
         # print filename

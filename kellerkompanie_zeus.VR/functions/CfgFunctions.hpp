@@ -66,6 +66,7 @@ class keko
 	class client
 	{
 		class timedHint {};
+		class switchUnconscious {};
 	};
 	class shared
 	{

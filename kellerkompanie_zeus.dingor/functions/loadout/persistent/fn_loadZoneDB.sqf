@@ -42,55 +42,24 @@ _nearestObjects = nearestObjects [_object, ["Land_BagFence_Long_F","Land_BagFenc
 } forEach _nearestObjects;
 
 {
-	_class = _x select 0;
-	_pos = _x select 1;
-	_dir = _x select 2;
-
-	_items = _x select 3;
-	_magazines = _x select 4;
-	_backpacks = _x select 5;
-	_weapons = _x select 6;
+	_x params["_class","_pos","_dir","_containerContent"];
 
 	_object =  createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 	_object setDir _dir;
 
-	clearWeaponCargoGlobal _object;
-	clearMagazineCargoGlobal _object;
-	clearBackpackCargoGlobal _object;
-	clearItemCargoGlobal _object;
-
-	{ _object addItemCargoGlobal [_x, _items select 1 select _forEachIndex]; } forEach (_items select 0);	
-	{ _object addMagazineCargoGlobal [_x, _magazines select 1 select _forEachIndex]; } forEach (_magazines select 0);
-	{ _object addBackpackCargoGlobal [_x, _backpacks select 1 select _forEachIndex]; } forEach (_backpacks select 0);
-	{ _object addWeaponCargoGlobal [_x, _weapons select 1 select _forEachIndex]; } forEach (_weapons select 0);	
+	[_object, _containerContent] call keko_fnc_setContainerContent;
 
 } forEach _crates;
 
 {
-	_class = _x select 0;
-	_pos = _x select 1;
-	_dir = _x select 2;	
-
-	_items = _x select 3;
-	_magazines = _x select 4;
-	_backpacks = _x select 5;
-	_weapons = _x select 6;
-	_fuel = _x select 7;
-
+	_x params["_class","_pos","_dir","_containerContent","_fuel"];
+	
 	_object = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 	_object setDir _dir;
 
-	clearWeaponCargoGlobal _object;
-	clearMagazineCargoGlobal _object;
-	clearBackpackCargoGlobal _object;
-	clearItemCargoGlobal _object;
-
-	{ _object addItemCargoGlobal [_x, _items select 1 select _forEachIndex]; } forEach (_items select 0);	
-	{ _object addMagazineCargoGlobal [_x, _magazines select 1 select _forEachIndex]; } forEach (_magazines select 0);
-	{ _object addBackpackCargoGlobal [_x, _backpacks select 1 select _forEachIndex]; } forEach (_backpacks select 0);
-	{ _object addWeaponCargoGlobal [_x, _weapons select 1 select _forEachIndex]; } forEach (_weapons select 0);	
-
 	_object setFuel _fuel;
+
+	[_object, _containerContent] call keko_fnc_setContainerContent;
 
 } forEach _vehicles;
 

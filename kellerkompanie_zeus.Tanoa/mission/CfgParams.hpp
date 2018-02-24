@@ -98,6 +98,11 @@ class param_faction
 
 		500, // Armia Krajowa (Partyzanci)
 		501, // Armia Krajowa (Camo)
+		502, // Armia Krajowa (Grade)
+
+		510, // Wehrmacht
+
+		520, // British Commandos
 		
 		999  // Custom
 	};
@@ -156,6 +161,11 @@ class param_faction
 
 		"[Ironfront] Armia Krajowa (Partyzanci)",	
 		"[Ironfront] Armia Krajowa (Camo)",	
+		"[Ironfront] Armia Krajowa (Grade)",
+
+		"[Ironfront] Wehrmacht",	
+
+		"[Ironfront] British Commandos",	
 		
 		"Custom"
 	};
@@ -320,7 +330,7 @@ class param_persistent_loadout
 		"Deaktiviert",
 		"Aktiviert"
 	};
-	default = 1;
+	default = 0;
 };
 class param_persistent_regular_saves
 {
@@ -339,5 +349,32 @@ class param_persistent_regular_saves
 		"alle 5 Minuten",
 		"alle 10 Minuten"
 	};
-	default = 60;
+	default = 0;
+};
+
+
+
+
+class dummy_settings_undercover {
+	title = "---------------------- Undercover Settings ----------------------";
+	values[] = {-99999};
+	default = -99999;
+	texts[] = {""};
+};
+class param_undercover_faction
+{
+	title="Undercover Fraktion";
+	values[] = {
+		0, // Deaktiviert
+		1, // Blufor
+		2, // Independent
+		3  // Opfor
+	};
+	texts[] = {
+		"Deaktiviert",
+		"BLUFOR",
+		"Independent",
+		"OPFOR"
+	};
+	default = 0;
 };
