@@ -15,6 +15,7 @@ if(_state) then {
 	// switch unit back from civilian
 	_isGroupLeader = player getVariable "keko_leader_before_unconscious";
 	_side_before_unconscious = player getVariable "keko_side_before_unconscious";
+	[player] joinSilent createGroup _side_before_unconscious;
 	_group_before_unconscious = player getVariable ["keko_group_before_unconscious", createGroup _side_before_unconscious];
 	[player] joinSilent _group_before_unconscious;
 
